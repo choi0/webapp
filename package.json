@@ -1,0 +1,20 @@
+{
+  "name": "APP_NAME",
+  "version": "0.0.1",
+  "description": "APP_NAME",
+  "license": "Apache-2.0",
+  "scripts": {
+    "serve": "node server"
+  },
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "needle": "^1.6.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {}
+}
