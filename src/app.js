@@ -1,8 +1,33 @@
 /**
  * Created by dchoi1 on 8/1/17.
  */
-angular.module('angularbasic',['ngRoute'])
-    .config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
+var app = angular.module('angularbasic',
+    [
+        'ngRoute',
+        'ngTouch',
+        'ui.grid',
+        'ui.grid.cellNav',
+        'ui.grid.edit',
+        'ui.grid.resizeColumns',
+        'ui.grid.pinning',
+        'ui.grid.selection',
+        'ui.grid.moveColumns',
+        'ui.grid.exporter',
+        'ui.grid.importer', 
+        'ui.grid.grouping'
+    ]);
+
+
+
+
+/*
+
+routes
+
+*/
+
+
+    app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
         $locationProvider
             .html5Mode(true);
 
@@ -15,6 +40,10 @@ angular.module('angularbasic',['ngRoute'])
             .when('/home',{
                 templateUrl : '/home/home.html',
                 controller : 'HomeCtrl'
+            })
+            .when('/grid',{
+                templateUrl : '/grid/grid.html',
+                controller : 'GridCtrl'
             })
             .otherwise({
                 templateUrl : '/home/home.html',
