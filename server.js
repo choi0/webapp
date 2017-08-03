@@ -7,7 +7,6 @@ var app = express();
 var path = require('path');
 var routes = require('./routes/routes');
 var bodyParser = require('body-parser');
-var client_config = require('./config/client_prod_env.js');
 var server_config = require('./config/server_env.js');
 var server = http.createServer(app);
 var env = process.env.ZONE || 'LOCAL';

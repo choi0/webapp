@@ -37,10 +37,7 @@
   "region": "1",
   "countries": "countries1",
   "therapy": "therapy1",
-  "conditions": {
-    "condition": "cond1",
-    "condition": "cond2"
-  },
+  "conditions": ["cond1","cond2"],
   "immunology": "immunology1",
   "number_of_PCPs": "1",
   "number_of_nurses": "1",
@@ -60,10 +57,7 @@
   "region": "2",
   "countries": "countries2",
   "therapy": "therapy2",
-  "conditions": {
-    "condition": "cond3",
-    "condition": "cond4"
-  },
+  "conditions": ["cond3","cond4"],
   "immunology": "3",
   "number_of_PCPs": "2",
   "number_of_nurses": "2",
@@ -83,10 +77,7 @@
   "region": "3",
   "countries": "countries3",
   "therapy": "therapy3",
-  "conditions": {
-    "condition": "cond1",
-    "condition": "cond5"
-  },
+  "conditions": ["cond1","cond5"],
   "immunology": "immunology3",
   "number_of_PCPs": "3",
   "number_of_nurses": "3",

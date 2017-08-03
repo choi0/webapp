@@ -5,7 +5,8 @@ var env = process.env.ZONE || 'LOCAL';
 
 var config = {
     hardcoded: '1',
-    envvar: process.env.ENVVAR
+    envvar: process.env.ENVVAR,
+    db_url: 'localhost:27017/local'
 };
 
 if(env === 'LOCAL') {
@@ -17,3 +18,5 @@ if(env === 'LOCAL') {
     config.hardcoded = '6';
     console.log("YOU ARE ON SERVER PROD");
 }
+
+module.exports = config;
