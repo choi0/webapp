@@ -18,13 +18,14 @@ var url = f('mongodb://%s:%s@' + config.db_url + '?authMechanism=%s', user, pass
 // var url = 'mongodb://localhost:27017';
 console.log(url);
 module.exports = {
-    connectToMongoDB: function () {
+    connectToMongoDB: function (body, callback) {
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
             db.collection("projects").findOne({}, function(err,result) {
                 if (err) throw err;
                 console.log(result);
                 db.close;
+                callback(null, result);
             })
         })
     },

@@ -11,12 +11,15 @@ angular.module('angularbasic')
         var headers = {
             'Content-Type': 'application/json'
         }
-        service.connectToMongoDB = function(){
+        service.connectToMongoDB = function(callback){
             console.log("ExampleService call start");
-            return $http.post('/api/mongodb/connectToMongoDB', data, headers).then(function (response) {
-                console.log(response)
+            $http.post('/api/mongodb/connectToMongoDB', data, headers).then(function (response) {
+                console.log("****");
+                // console.log(response);
+                callback(null, response);
+                console.log("****");
             }, function(error) {
-                console.log(error)
+                console.log(error);
             });
         }
 

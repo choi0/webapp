@@ -1,3 +1,15 @@
+***things to do
+
+send documents to grid
+error catching with mongodb connection
+dynamic row size
+array for conditions
+project input modal
+styling
+scrollbar
+https?
+server research
+
 ****Don't touch
 
 

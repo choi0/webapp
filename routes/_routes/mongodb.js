@@ -8,8 +8,6 @@ module.exports = function (router) {
         data: "example"
     }
     router.post('/api/mongodb/connectToMongoDB', function (request, response) {
-        console.log("TESTING DATA");
-        console.dir(request.body);
         API.mongodb.connectToMongoDB(request.body, function (req, res) {
             console.log("router response:")
             response.json(res);
