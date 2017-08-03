@@ -10,7 +10,7 @@ module.exports = function (router) {
     router.post('/api/mongodb/connectToMongoDB', function (request, response) {
         API.mongodb.connectToMongoDB(request.body, function (req, res) {
             console.log("router response:")
-            response.json(res);
+            response.send(res);
         });
     });
 

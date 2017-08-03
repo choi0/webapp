@@ -12,19 +12,16 @@ angular.module('angularbasic')
         'uiGridGroupingConstants',
         'MongoDBService', function ($scope,__env,  $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, MongoDBService) {
 
+            $scope.mongoData = [];
             console.log("start uuid service call");
             MongoDBService.connectToMongoDB(function(req,res) {
                 // console.log("Received MongoDB data to the Angular UI")
-                console.log(res);
-                $scope.mongoData.push(res.data);
-
-
-
-
+                for(var i=0; i < res.data.length; i++) {
+                    $scope.mongoData.push(res.data[i]);
+                }
             });
             // console.log(response);
             console.log("end uuid service call");
-            $scope.mongoData = [];
             $scope.gridOptions = {
                 data: 'mongoData',
                 columnDefs: [
@@ -36,7 +33,7 @@ angular.module('angularbasic')
                     { name:'region', width:100 },
                     { name:'countries', width:100 },
                     { name:'therapy', width:100 },
-                    // { name:'conditions', width:100 },
+                    { name:'conditions', width:100 },
                     { name:'immunology', width:100 },
                     { name:'number_of_PCPs', width:100 },
                     { name:'number_of_nurses', width:100 },
@@ -61,8 +58,10 @@ angular.module('angularbasic')
                             console.log(res);
                             // $scope.mongoData = res;
             
-            
-                            $scope.myData.push(res);
+                            for(var i=0; i < res.data.size; i++) {
+                                $scope.myData.push(res.data[i]);
+
+                            }
             
             
             
