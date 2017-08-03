@@ -21,7 +21,7 @@ module.exports = {
     connectToMongoDB: function (body, callback) {
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
-            db.collection("projects").findOne({}, function(err,result) {
+            db.collection("projects2").findOne({}, function(err,result) {
                 if (err) throw err;
                 console.log(result);
                 db.close;

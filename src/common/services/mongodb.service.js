@@ -14,10 +14,10 @@ angular.module('angularbasic')
         service.connectToMongoDB = function(callback){
             console.log("ExampleService call start");
             $http.post('/api/mongodb/connectToMongoDB', data, headers).then(function (response) {
-                console.log("****");
+                // console.log("****");
                 // console.log(response);
                 callback(null, response);
-                console.log("****");
+                // console.log("****");
             }, function(error) {
                 console.log(error);
             });

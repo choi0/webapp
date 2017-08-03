@@ -2,5 +2,13 @@
 <a href ng-Click="connectToMongoDB()">MongoConnect</a>
 
 
-    <div id="grid1" ui-grid="gridOptions" class="grid"></div>
+    <!--<div id="grid1" ui-grid="gridOptions" ui-grid-cellNav ui-grid-edit ui-grid-resize-columns-->
+         <!--ui-grid-pinning ui-grid-selection ui-grid-move-columns ui-grid-importer-->
+         <!--ui-grid-exporter ui-grid-grouping class="grid"></div>-->
 
+
+<button id="filterToggle" type="button" class="btn btn-success" ng-click="toggleFilterRow()">Toggle Filter</button>
+<button id="refreshButton" type="button" class="btn btn-success" ng-click="refreshData()">Refresh Data</button>  <strong>Calls Pending:</strong> <span ng-bind="callsPending"></span>
+<br>
+<br>
+<div id="grid1" ui-grid="gridOptions"  class="grid"></div>

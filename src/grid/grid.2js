@@ -1,0 +1,220 @@
+/**
+ * Created by dchoi1 on 8/2/17.
+ */
+angular.module('angularbasic') 
+    .controller('GridCtrl', [
+        '$scope',
+        '__env',
+        '$http',
+        '$timeout',
+        '$interval',
+        'uiGridConstants',
+        'uiGridGroupingConstants',
+        'MongoDBService', function ($scope,__env,  $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, MongoDBService) {
+
+
+
+            $scope.gridOptions = {
+                // data: 'myData',
+                data: [{
+                   ID : "1",
+                   job_number : "1",
+                   project_title : "project_title1",
+                   project_lead : "project_lead1",
+                   client : "client1",
+                   region : "1",
+                   countries : "countries1",
+                   therapy : "therapy1",
+                   // conditions : [
+                   //     cond1",
+                   //     cond2"
+                   //  ],
+                   immunology : "immunology1",
+                   number_of_PCPs : "1",
+                   number_of_nurses : "1",
+                   total_nurse_time : "1h",
+                   lost_cancelled : "lost/cancelled1",
+                   year : "1111",
+                   number_of_patients : "1",
+                   total_patient_time : "1",
+                   business_issue : "business_issue1"
+                },
+
+                /* 2 */
+                {
+                   ID : "2",
+                   job_number : "2",
+                   project_title : "project_title2",
+                   project_lead : "project_lead2",
+                   client : "client2",
+                   region : "2",
+                   countries : "countries2",
+                   therapy : "therapy2",
+                    // "conditions : [
+                    //    cond3",
+                    //    cond4"
+                    // ],
+                   immunology : "3",
+                   number_of_PCPs : "2",
+                   number_of_nurses : "2",
+                   total_nurse_time : "2h",
+                   lost_cancelled : "lost/cancelled2",
+                   year : "2222",
+                   number_of_patients : "3",
+                   total_patient_time : "2",
+                   business_issue : "business_issue2"
+                },
+
+                /* 3 */
+                {
+                   ID : "3",
+                   job_number : "3",
+                   project_title : "project_title3",
+                   project_lead : "project_lead3",
+                   client : "client3",
+                   region : "3",
+                   countries : "countries3",
+                   therapy : "therapy3",
+                    // "conditions : [
+                    //    cond1",
+                    //    cond5"
+                    // ],
+                   immunology : "immunology3",
+                   number_of_PCPs : "3",
+                   number_of_nurses : "3",
+                   total_nurse_time : "3h",
+                   lost_cancelled : "lost/cancelled3",
+                   year : "3333",
+                   number_of_patients : "3",
+                   total_patient_time : "3",
+                   business_issue : "business_issue3"
+                }],
+                // enableCellEditOnFocus: true,
+                // enableColumnResizing: true,
+                // enableFiltering: true,
+                // enableGridMenu: true,
+                // showGridFooter: true,
+                // showColumnFooter: true,
+                // fastWatch: true,
+                // rowIdentity: getRowId,
+                // getRowIdentity: getRowId,
+                // importerDataAddCallback: function importerDataAddCallback( grid, newObjects )
+                //     $scope.myData = $scope.data.concat( newObjects );{
+                // },
+                columnDefs: [
+                    { name:'ID', width:50 },
+                    { name:'job_number', width:100 },
+                    { name:'project_title', width:100 },
+                    { name:'project_lead', width:100 },
+                    { name:'client', width:100 },
+                    { name:'region', width:100 },
+                    { name:'countries', width:100 },
+                    { name:'therapy', width:100 },
+                    // { name:'conditions', width:100 },
+                    { name:'immunology', width:100 },
+                    { name:'number_of_PCPs', width:100 },
+                    { name:'number_of_nurses', width:100 },
+                    { name:'total_nurse_time', width:100 },
+                    { name:'lost_cancelled', width:100 },
+                    { name:'year', width:100 },
+                    { name:'number_of_patients', width:100 },
+                    { name:'total_patient_time', width:100 },
+                    { name:'business_issue', width:100 }
+                ]
+                // columnDefs: [
+                //     { name:'id', width:50 },
+                //     { name:'name', width:100 },
+                //     { name:'age', width:100, enableCellEdit: true, aggregationType: uiGridConstants.aggregationTypes.avg, treeAggregationType: uiGridGroupingConstants.aggregation.AVG },
+                //     { name:'address.street', width:150, enableCellEdit: true },
+                //     { name:'address.city', width:150, enableCellEdit: true },
+                //     { name:'address.state', width:50, enableCellEdit: true },
+                //     { name:'address.zip', width:50, enableCellEdit: true },
+                //     { name:'company', width:100, enableCellEdit: true },
+                //     { name:'email', width:100, enableCellEdit: true },
+                //     { name:'phone', width:200, enableCellEdit: true },
+                //     { name:'about', width:300, enableCellEdit: true },
+                //     { name:'friends[0].name', displayName:'1st friend', width:150, enableCellEdit: true },
+                //     { name:'friends[1].name', displayName:'2nd friend', width:150, enableCellEdit: true },
+                //     { name:'friends[2].name', displayName:'3rd friend', width:150, enableCellEdit: true },
+                //     { name:'agetemplate',field:'age', width:150, cellTemplate: '<div class="ui-grid-cell-contents"><span>Age 2:{{COL_FIELD}}</span></div>' },
+                //     { name:'Is Active',field:'isActive', width:150, type:'boolean' },
+                //     { name:'Join Date',field:'registered', cellFilter:'date', width:150, type:'date', enableFiltering: false },
+                //     { name:'Month Joined',field:'registered', cellFilter: 'date:"MMMM"', filterCellFiltered: true, sortCellFiltered: true, width:150, type:'date' }
+                // ],
+                // onRegisterApi: function onRegisterApi(registeredApi) {
+                //     gridApi = registeredApi;
+                // }
+            };
+
+            // function getRowId(row) {
+            //     return row.id;
+            // }
+            //
+            // $scope.toggleFilterRow = function() {
+            //     $scope.gridOptions.enableFiltering = !$scope.gridOptions.enableFiltering;
+            //     gridApi.core.notifyDataChange(uiGridConstants.dataChange.COLUMN);
+            // };
+            //
+            // $scope.callsPending = 0;
+            //
+            // var i = 0;
+            $scope.refreshData = function(){
+                $scope.myData = [];
+            
+                var start = new Date();
+                var sec = $interval(function () {
+            
+                    $scope.connectToMongoDB = function(){
+                        console.log("start uuid service call");
+                        MongoDBService.connectToMongoDB(function(req,res) {
+                            // console.log("Received MongoDB data to the Angular UI")
+                            console.log(res);
+                            // $scope.mongoData = res;
+            
+            
+                            $scope.myData.push(res);
+            
+            
+            
+                        });
+                        // console.log(response);
+                        console.log("end uuid service call");
+                    };
+                }, 200, 10);
+            
+            
+                var timeout = $timeout(function() {
+                    $interval.cancel(sec);
+                    $scope.left = '';
+                }, 2000);
+            
+                $scope.$on('$destroy', function(){
+                    $timeout.cancel(timeout);
+                    $interval.cancel(sec);
+                });
+            };
+            
+            
+            
+            
+            
+            $scope.connectToMongoDB = function(){
+                console.log("start uuid service call");
+                MongoDBService.connectToMongoDB(function(req,res) {
+                    // console.log("Received MongoDB data to the Angular UI")
+                    console.log(res);
+                    $scope.mongoData = res;
+
+
+
+
+                });
+                // console.log(response);
+                console.log("end uuid service call");
+            };
+            
+            // $scope.gridOptions.data = 'mongoData';
+
+
+            console.log("CLIENT IS ON: " + __env.clientEnv);
+}]);
