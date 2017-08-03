@@ -7,8 +7,10 @@ var app = express();
 var path = require('path');
 var routes = require('./routes/routes');
 var bodyParser = require('body-parser');
+var client_config = require('./config/client_prod_env.js');
+var server_config = require('./config/server_env.js');
 var server = http.createServer(app);
-
+var env = process.env.ZONE || 'LOCAL';
 
 app.use(express.static(path.join(__dirname, '/src')));
 //getting headers for uuid
@@ -18,6 +20,7 @@ server.on('request', function(request, response) {
     //console.log("LOGGED UUID2:" + request.headers.optumuuid + request.headers.userID);
 });
 
+console.log("we are here " + server_config);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
@@ -26,6 +29,11 @@ app.use('/', routes);
 // app.use('/', express.static('/'));
 app.use(express.static(path.join(__dirname, 'src')));
 // app.use('/src', express.static(path.join(__dirname, '/src')));
+switch(env) {
+    case 'PROD': app.use('/client_env', express.static(path.join(__dirname, 'config/client_prod_env.js')));
+    default: app.use('/client_env', express.static(path.join(__dirname, 'config/client_local_env.js')));
+}
+// app.use('/client_env', express.static(path.join(__dirname, 'config/client_prod_env.js')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
 // app.use('/api/ecg/downloadStream', express.static(path.join(__dirname, 'api/ecg.js')));

@@ -18,14 +18,19 @@ var app = angular.module('angularbasic',
     ]);
 
 
+/*
+constants
+ */
 
+var env = {};
+if(window){
+    Object.assign(env, window.__env);
+}
+app.constant('__env',env);
 
 /*
-
 routes
-
 */
-
 
     app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
         $locationProvider
