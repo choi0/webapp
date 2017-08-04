@@ -1,4 +1,20 @@
 .grid {
-    width: 80%;
+    width: 100%;
     height: 40%;
+}
+.ui-grid-cell  {
+    display : table-cell;
+    height: auto !important;
+    overflow:visible;
+    position: static;
+}
+/*.ui-grid-row {*/
+    /*display : table-row;*/
+    /*height: auto !important;*/
+    /*position: static;*/
+/*}*/
+.ui-grid-cell-contents {
+    height: auto !important;
+    white-space: normal;
+    overflow:visible;
 }

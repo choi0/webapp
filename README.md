@@ -2,14 +2,19 @@
 
 send documents to grid
 error catching with mongodb connection
-dynamic row size
+dynamic column size
+dynamic row size //doesnt make sense unless we do a char cap?
+add restore state button
 array for conditions
 project input modal
+click to expand (change cell template)
+expand all/collapse all button
 styling
 scrollbar
 https?
 server research
 
+oc login https://api.starter-us-west-2.openshift.com
 ****Don't touch
 
 
@@ -54,7 +59,7 @@ server research
   "number_of_PCPs": "1",
   "number_of_nurses": "1",
   "total_nurse_time": "1h",
-  "lost/cancelled": "lost/cancelled1",
+  "lost_cancelled": "lost/cancelled1",
   "year": "1111",
   "number_of_patients": "1",
   "total_patient_time": "1",
@@ -74,7 +79,7 @@ server research
   "number_of_PCPs": "2",
   "number_of_nurses": "2",
   "total_nurse_time": "2h",
-  "lost/cancelled": "lost/cancelled2",
+  "lost_cancelled": "lost/cancelled2",
   "year": "2222",
   "number_of_patients": "3",
   "total_patient_time": "2",
@@ -94,7 +99,7 @@ server research
   "number_of_PCPs": "3",
   "number_of_nurses": "3",
   "total_nurse_time": "3h",
-  "lost/cancelled": "lost/cancelled3",
+  "lost_cancelled": "lost/cancelled3",
   "year": "3333",
   "number_of_patients": "3",
   "total_patient_time": "3",

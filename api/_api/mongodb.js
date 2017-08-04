@@ -11,8 +11,8 @@ var config = require('../../config/server_env.js')
 
 console.log("AHHHH" + config + "end");
 console.dir(config);
-var user = encodeURIComponent('admin');
-var password = encodeURIComponent('sdLdn104xFk7HFQQ');
+var user = encodeURIComponent(config.db_user);
+var password = encodeURIComponent(config.db_pass);
 var authMechanism = 'SCRAM-SHA-1&authSource=admin';
 var url = f('mongodb://%s:%s@' + config.db_url + '?authMechanism=%s', user, password, authMechanism);
 // var url = 'mongodb://localhost:27017';
