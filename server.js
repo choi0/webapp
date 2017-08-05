@@ -37,6 +37,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/angular-ui-bootstrap/dist'));
+app.use('/fonts', express.static(__dirname + '/fonts'));
 // app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 // app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 // app.use('/api/ecg/downloadStream', express.static(path.join(__dirname, 'api/ecg.js')));

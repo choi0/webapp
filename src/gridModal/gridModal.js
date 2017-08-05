@@ -12,7 +12,7 @@ angular.module('angularbasic')
             animation: $ctrl.animationsEnabled,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'myModalContent.html',
+            templateUrl: '/gridModal/gridModal.html',
             controller: 'GridModalInstanceCtrl',
             controllerAs: '$ctrl',
             size: size,

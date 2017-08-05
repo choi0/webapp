@@ -4,44 +4,11 @@
 
 <div ng-controller="GridModalCtrl as $ctrl" class="modal-demo">
 
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in $ctrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ $ctrl.selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="stackedModal.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body-{{name}}">
-            Having multiple modals open at once is probably bad UX but it's technically possible.
-        </div>
-    </script>
 
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">Small modal</button>
     <button type="button"
             class="btn btn-default"
             ng-click="$ctrl.open('sm', '.modal-parent')">
         Modal appended to a custom parent
-    </button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.toggleAnimation()">Toggle Animation ({{ $ctrl.animationsEnabled }})</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.openComponentModal()">Open a component modal!</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.openMultipleModals()">
-        Open multiple modals at once
     </button>
     <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
     <div class="modal-parent">
@@ -58,4 +25,67 @@
 <br>
 <br>
 <!--<div id="grid1" ui-grid="gridOptions"  class="grid" ui-grid-move-columns ui-grid-resize-columns  ui-grid-auto-resize></div>-->
-<div id="grid1" ui-grid="gridOptions"  class="grid"></div>
+<!--<div id="grid1" ui-grid="gridOptions"  class="grid"></div>-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>
+                    LayoutIt! <small>Interface Builder for Bootstrap</small>
+                </h1>
+            </div>
+            <div class="carousel slide" id="carousel-467869">
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-467869">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-467869">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-467869" class="active">
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                First Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Second Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Third Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                </div> <a class="left carousel-control" href="#carousel-467869" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-467869" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+
+            <!--there was a table here-->
+
+        </div>
+    </div>
+</div>
+
+
+
