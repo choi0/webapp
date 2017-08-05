@@ -3,8 +3,11 @@
  */
 var app = angular.module('angularbasic',
     [
+        'ngAnimate',
         'ngRoute',
+        'ngSanitize',
         'ngTouch',
+        'ui.bootstrap',
         'ui.grid',
         'ui.grid.cellNav',
         'ui.grid.edit',

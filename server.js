@@ -35,6 +35,10 @@ switch(env) {
 // app.use('/client_env', express.static(path.join(__dirname, 'config/client_prod_env.js')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/bootstrap', express.static(__dirname + '/node_modules/angular-ui-bootstrap/dist'));
+// app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+// app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 // app.use('/api/ecg/downloadStream', express.static(path.join(__dirname, 'api/ecg.js')));
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('./src/index.html'));
