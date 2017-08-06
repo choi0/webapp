@@ -1,39 +1,117 @@
-<form role="form">
+<form role="form" class="grid-modal">
+    {{testResponse}}
+    </br>
+    </br>
     <div class="form-group">
-
-        <label for="exampleInputEmail1">
-            Email address
+        <label for="inputID">
+            ID
         </label>
-        <input type="email" class="form-control" id="exampleInputEmail1" />
-    </div>
-    <div class="form-group">
-
-        <label for="exampleInputPassword1">
-            Password
-        </label>
-        <input type="password" class="form-control" id="exampleInputPassword1" />
+        <input type="text" class="my-form" id="inputID" ng-model="inputID"/>
     </div>
     <div class="form-group">
-
-        <label for="exampleInputFile">
-            File input
+        <label for="inputJobNumber">
+            Job Number
         </label>
-        <input type="file" id="exampleInputFile" />
-        <p class="help-block">
-            Example block-level help text here.
-        </p>
+        <input type="text" class="my-form" id="inputJobNumber" ng-model="inputJobNumber"/>
     </div>
-    <div class="checkbox">
-
-        <label>
-            <input type="checkbox" /> Check me out
+    <div class="form-group">
+        <label for="inputProjectTitle">
+            Project Title
         </label>
+        <input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />
     </div>
-    <button type="submit" class="btn btn-default">
-        Submit
-    </button>
+    <div class="form-group">
+        <label for="inputProjectLead">
+            Project Lead
+        </label>
+        <input type="text" class="my-form" id="inputProjectLead" ng-model="inputProjectLead" />
+    </div>
+    <div class="form-group">
+        <label for="inputClient">
+            Client
+        </label>
+        <input type="text" class="my-form" id="inputClient" ng-model="inputClient" />
+    </div>
+    <div class="form-group">
+        <label for="inputRegion">
+            Region
+        </label>
+        <input type="text" class="my-form" id="inputRegion" ng-model="inputRegion" />
+    </div>
+    <div class="form-group">
+        <label for="inputCountries">
+            Countries
+        </label>
+        <input type="text" class="my-form" id="inputCountries" ng-model="inputCountries" />
+    </div>
+    <div class="form-group">
+        <label for="inputTherapy">
+            Therapy
+        </label>
+        <input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />
+    </div>
+    <div class="form-group">
+        <label for="inputConditions">
+            Conditions
+        </label>
+        <input type="text" class="my-form" id="inputConditions" ng-model="inputConditions" />
+    </div>
+    <div class="form-group">
+        <label for="inputImmunology">
+            Immunology
+        </label>
+        <input type="text" class="my-form" id="inputImmunology" ng-model="inputImmunology" />
+    </div>
+    <div class="form-group">
+        <label for="inputNumberOfPCPs">
+            Number Of PCPs
+        </label>
+        <input type="text" class="my-form" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
+    </div>
+    <div class="form-group">
+        <label for="inputNumberOfNurses">
+            Number Of Nurses
+        </label>
+        <input type="text" class="my-form" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
+    </div>
+    <div class="form-group">
+        <label for="inputTotalNurseTime">
+            Total Nurse Time
+        </label>
+        <input type="text" class="my-form" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
+    </div>
+    <div class="form-group">
+        <label for="inputLostCancelled">
+            Lost/Cancelled
+        </label>
+        <input type="text" class="my-form" id="inputLostCancelled" ng-model="inputLostCancelled" />
+    </div>
+    <div class="form-group">
+        <label for="InputYear">
+            Year
+        </label>
+        <input type="text" class="my-form" id="InputYear" ng-model="inputYear" />
+    </div>
+    <div class="form-group">
+        <label for="inputNumberOfPatients">
+            Number Of Patients
+        </label>
+        <input type="text" class="my-form" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
+    </div>
+    <div class="form-group">
+        <label for="inputTotalPatientTime">
+            Total Patient Time
+        </label>
+        <input type="text" class="my-form" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
+    </div>
+    <div class="form-group">
+        <label for="inputBusinessIssue">
+            Business Issue
+        </label>
+        <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" />
+    </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.submit()">Submit</button>
         <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
     </div>
 </form>

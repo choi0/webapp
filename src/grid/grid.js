@@ -14,7 +14,7 @@ angular.module('angularbasic')
 
             $scope.mongoData = [];
             console.log("start uuid service call");
-            MongoDBService.connectToMongoDB(function(req,res) {
+            MongoDBService.queryDocuments(function(req,res) {
                 // console.log("Received MongoDB data to the Angular UI")
                 for(var i=0; i < res.data.length; i++) {
                     console.log(res);
@@ -22,7 +22,7 @@ angular.module('angularbasic')
 
                     //building the "conditions" string
                     var stringBuilder = [];
-                    for (var j =0; j < data.conditions.length; j++) {
+                    for (var j =0; data.conditions && j < data.conditions.length; j++) {
                         console.log(data.conditions[j]);
 
                         // for (x in data.conditions[j]) {
@@ -96,9 +96,9 @@ angular.module('angularbasic')
             
             
             
-            $scope.connectToMongoDB = function(){
+            $scope.queryDocuments = function(){
                 console.log("start uuid service call");
-                MongoDBService.connectToMongoDB(function(req,res) {
+                MongoDBService.queryDocuments(function(req,res) {
                     // console.log("Received MongoDB data to the Angular UI")
                     console.log(res);
                     var data = res.data;

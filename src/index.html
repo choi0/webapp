@@ -25,6 +25,8 @@
 
     <script type="text/javascript" src="/home/home.js"></script>
     <script type="text/javascript" src="/grid/grid.js"></script>
+    <script type="text/javascript" src="/partials/header/header.js"></script>
+    <script type="text/javascript" src="/partials/footer/footer.js"></script>
     <script type="text/javascript" src="/gridModal/gridModal.js"></script>
     <script type="text/javascript" src="/gridModal/gridModalInstance.js"></script>
     <script src="/common/services/example.service.js"></script>
@@ -46,8 +48,16 @@
 
 </head>
 <body>
+<div ng-controller="HeaderCtrl">
+    <ng-include src="'partials/header/header.html'">
+    </ng-include>
+</div>
 <div>
     <ng-view></ng-view>
+</div>
+<div ng-controller="FooterCtrl">
+    <ng-include src="'partials/footer/footer.html'">
+    </ng-include>
 </div>
 </body>
 

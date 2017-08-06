@@ -1,41 +1,11 @@
 
-<a href ng-Click="connectToMongoDB()">MongoConnect</a>
-
-
-<div ng-controller="GridModalCtrl as $ctrl" class="modal-demo">
-
-
-    <button type="button"
-            class="btn btn-default"
-            ng-click="$ctrl.open('sm', '.modal-parent')">
-        Modal appended to a custom parent
-    </button>
-    <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
-    <div class="modal-parent">
-    </div>
-</div>
-
-    <!--<div id="grid1" ui-grid="gridOptions" ui-grid-cellNav ui-grid-edit ui-grid-resize-columns-->
-         <!--ui-grid-pinning ui-grid-selection ui-grid-move-columns ui-grid-importer-->
-         <!--ui-grid-exporter ui-grid-grouping class="grid"></div>-->
-
-
-
-<button id="restore" type="button" class="btn btn-success" ng-click="restoreState()">Restore</button>
-<br>
-<br>
 <!--<div id="grid1" ui-grid="gridOptions"  class="grid" ui-grid-move-columns ui-grid-resize-columns  ui-grid-auto-resize></div>-->
 <!--<div id="grid1" ui-grid="gridOptions"  class="grid"></div>-->
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <div class="page-header">
-                <h1>
-                    LayoutIt! <small>Interface Builder for Bootstrap</small>
-                </h1>
-            </div>
-            <div class="carousel slide" id="carousel-467869">
+        <!--new line here-->
+        <br class="col-md-12">
+            <div class="my-carousel" id="carousel-467869" >
                 <ol class="carousel-indicators">
                     <li data-slide-to="0" data-target="#carousel-467869">
                     </li>
@@ -82,6 +52,21 @@
             </div>
 
             <!--there was a table here-->
+        </br>
+            <div ng-controller="GridModalCtrl as $ctrl" class="grid-modal-button">
+                <button type="button"
+                        class="btn btn-default"
+                        ng-click="$ctrl.open('lg', '.modal-parent')">
+                    Add Project
+                </button>
+                <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
+                <div class="modal-parent">
+                </div>
+            </div>
+            </br>
+            <div id="grid1" ui-grid="gridOptions"  class="grid" style="vertical-align: middle"></div>
+        </br></br>
+
 
         </div>
     </div>

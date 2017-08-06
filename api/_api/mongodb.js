@@ -18,14 +18,28 @@ var url = f('mongodb://%s:%s@' + config.db_url + '?authMechanism=%s', user, pass
 // var url = 'mongodb://localhost:27017';
 console.log(url);
 module.exports = {
-    connectToMongoDB: function (body, callback) {
+    queryDocuments: function (body, callback) {
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
             db.collection("projects").find({}).toArray(function(err,result) {
                 if (err) throw err;
-                console.log(result);
+                // console.log(result);
                 db.close;
                 callback(null, result);
+            })
+        })
+    },
+    uploadDocument: function (body, callback) {
+        console.log("ANSDOFOAJSDFJ: "+body);
+        console.dir(body);
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            db.collection("projects").insertOne(body, function (err, result) {
+                if (err) throw err;
+                // console.log(result);
+                db.close;
+                callback(null, result);
+                
             })
         })
     },

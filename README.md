@@ -10,9 +10,14 @@ project input modal
 click to expand (change cell template)
 expand all/collapse all button
 styling
+loading bar for rows
+header/footer styling
 scrollbar
 https?
 server research
+
+*inputYear setting off "This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar."
+
 
 oc login https://api.starter-us-west-2.openshift.com
 ****Don't touch
