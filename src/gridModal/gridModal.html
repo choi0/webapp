@@ -1,5 +1,5 @@
 <form role="form" class="grid-modal">
-    {{testResponse}}
+    <!--{{testResponse}}-->
     </br>
     </br>
     <div class="form-group">
@@ -50,11 +50,16 @@
         </label>
         <input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />
     </div>
+    <!--{{inputConditions}}-->
     <div class="form-group">
         <label for="inputConditions">
             Conditions
         </label>
-        <input type="text" class="my-form" id="inputConditions" ng-model="inputConditions" />
+        <span ng-repeat="condition in inputConditions">
+            <input type="text" class="my-form" id="inputConditions" ng-model="condition.condition" />
+            <button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>
+            <button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>
+        </span>
     </div>
     <div class="form-group">
         <label for="inputImmunology">

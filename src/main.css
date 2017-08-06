@@ -1,3 +1,7 @@
+.add-conditions {
+    display: inline;
+}
+
 .grid {
     padding: 0px;
     width: 90%;
@@ -52,10 +56,35 @@
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
+.my-form-group {
+    display: inline
+    /*margin-bottom: 15px;*/
+    /*height: 46px;*/
+    /*padding: 10px 16px;*/
+    /*font-size: 18px;*/
+    /*line-height: 1.3333333;*/
+    /*border-radius: 6px;*/
+    /*display: inline-block;*/
+    /*margin-bottom: 0;*/
+    /*vertical-align: middle*/
+}
+
+.my-grid {
+    padding: 0px;
+    width: 95%;
+    height: 600px;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
 .my-header {
     padding-bottom: 9px;
     margin: 0px 0 0px;
     border-bottom: 1px solid #eee
+}
+
+.remove-conditions {
+    display: inline;
 }
 
 .ui-grid-cell  {

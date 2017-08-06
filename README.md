@@ -17,7 +17,9 @@ https?
 server research
 
 *inputYear setting off "This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar."
+^^resolved itself
 
+*inputConditions error checking, multiple empty fields but data is there? how will this be handled by my emptyCheck()?
 
 oc login https://api.starter-us-west-2.openshift.com
 ****Don't touch

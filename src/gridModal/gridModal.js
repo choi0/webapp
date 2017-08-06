@@ -47,6 +47,16 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
     };
     $scope.poop = "testpoop";
 
+    // $ctrl.conditions  = [{hi: 'aosjdfo'}];
+    $scope.inputConditions  = [{condition: ''}];
+
+    $scope.addCondition = function () {
+        $scope.inputConditions.push({condition: ''});
+    }
+    $scope.removeCondition = function (index) {
+        $scope.inputConditions.splice(index,1);
+    }
+
     $ctrl.submit = function () {
         uploadDocument();
         // $uibModalInstance.close($ctrl.selected.item);
@@ -69,7 +79,22 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         if (!$scope.inputRegion) { errorMessages.push("Missing 'Region' field"); };
         if (!$scope.inputCountries) { errorMessages.push("Missing 'Countries' field"); };
         if (!$scope.inputTherapy) { errorMessages.push("Missing 'Therapy' field"); };
-        if (!$scope.inputConditions) { errorMessages.push("Missing 'Conditions' field"); };
+        //Check each item in the array to see if it is empty;
+        for(var i = 0; i < $scope.inputConditions.length; i++) {
+            //break out of loop as soon as we find a string in an item
+            if($scope.inputConditions[i].condition) {
+                i = $scope.inputConditions.length;
+            }
+            //if the last item in the array is empty the whole thing is empty
+            console.log(i + "len" + $scope.inputConditions.length);
+            if( i = $scope.inputConditions.length - 1 ) {
+                if (!$scope.inputConditions[i].condition) {
+                    errorMessages.push("Missing 'Conditions' field");
+                };
+            }
+
+        }
+        // if (!$scope.inputConditions) { errorMessages.push("Missing 'Conditions' field"); };
         if (!$scope.inputImmunology) { errorMessages.push("Missing 'Immunology' field"); };
         if (!$scope.inputNumberOfPCPs) { errorMessages.push("Missing 'Number Of PCPs' field"); };
         if (!$scope.inputNumberOfNurses) { errorMessages.push("Missing 'Number Of Nurses' field"); };
@@ -80,10 +105,25 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         if (!$scope.inputTotalPatientTime) { errorMessages.push("Missing 'Total Patient Time' field"); };
         if (!$scope.inputBusinessIssue) { errorMessages.push("Missing 'Business Issue' field"); };
     };
-    
-    var conditionsArrayBuilder = function () {
 
+    var conditionsArray = [];
+    var conditionsArrayBuilder = function () {
+        conditionsArray = [];
+        for(var i = 0; i < $scope.inputConditions.length; i++) {
+            if($scope.inputConditions[i].condition) {
+                conditionsArray.push($scope.inputConditions[i]);
+            }
+        }
+        conditionsArray.sort(function (a,b) {
+            var nameA=a.condition.toLowerCase(), nameB=b.condition.toLowerCase()
+            if (nameA < nameB) //sort string ascending
+                return -1
+            if (nameA > nameB)
+                return 1
+            return 0 //default return value (no sorting)
+        });
     };
+
     var uploadDocument = function () {
         var inputID = $scope.inputID || "";
         var inputJobNumber = $scope.inputJobNumber || "";
@@ -93,7 +133,10 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         var inputRegion = $scope.inputRegion || "";
         var inputCountries = $scope.inputCountries || "";
         var inputTherapy = $scope.inputTherapy || "";
-        var inputConditions = $scope.inputConditions || "";
+        //build inputConditions string
+        conditionsArrayBuilder();
+        var inputConditions = conditionsArray;
+        // var inputConditions = $scope.inputConditions || "";
         var inputImmunology = $scope.inputImmunology || "";
         var inputNumberOfPCPs = $scope.inputNumberOfPCPs || "";
         var inputNumberOfNurses = $scope.inputNumberOfNurses || "";
@@ -104,11 +147,13 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         var inputTotalPatientTime = $scope.inputTotalPatientTime || "";
         var inputBusinessIssue = $scope.inputBusinessIssue || "";
         emptyFieldCheck();
-        $scope.testResponse = inputID + inputJobNumber + inputProjectTitle + inputProjectLead + inputClient + inputRegion + inputCountries + inputTherapy + inputConditions + inputImmunology + inputNumberOfPCPs + inputNumberOfNurses + inputTotalNurseTime + inputLostCancelled + inputYear + inputNumberOfPatients + inputTotalPatientTime + inputBusinessIssue;
+        // $scope.testResponse = inputID + inputJobNumber + inputProjectTitle + inputProjectLead + inputClient + inputRegion + inputCountries + inputTherapy + inputConditions + inputImmunology + inputNumberOfPCPs + inputNumberOfNurses + inputTotalNurseTime + inputLostCancelled + inputYear + inputNumberOfPatients + inputTotalPatientTime + inputBusinessIssue;
+        $scope.testResponse = inputConditions;
 
-        if (errorMessages.length > 0) {
-            $scope.testResponse = errorMessages;
-        };
+
+        // if (errorMessages.length > 0) {
+        //     $scope.testResponse = errorMessages;
+        // };
         var documentJSON = {
             "ID" : inputID,
             "job_number" : inputJobNumber,
@@ -118,10 +163,7 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
             "region" : inputRegion,
             "countries" : inputCountries,
             "therapy" : inputTherapy,
-            // "conditions" : [
-            //     "cond1",
-            //     "cond2"
-            // ],
+            "conditions" : inputConditions,
             "immunology" : inputImmunology,
             "number_of_PCPs" : inputNumberOfPCPs,
             "number_of_nurses" : inputNumberOfNurses,
