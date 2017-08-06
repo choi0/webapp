@@ -10,6 +10,7 @@ project input modal
 click to expand (change cell template)
 expand all/collapse all button
 styling
+pull auto complete values from mongodb
 loading bar for rows
 header/footer styling
 scrollbar

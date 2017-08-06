@@ -113,7 +113,8 @@
         <label for="inputBusinessIssue">
             Business Issue
         </label>
-        <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" />
+
+        <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="$ctrl.submit()">Submit</button>

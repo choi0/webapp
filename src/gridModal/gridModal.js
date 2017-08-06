@@ -47,6 +47,10 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
     };
     $scope.poop = "testpoop";
 
+    //autocomplete values
+    // $scope.businessIssues = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+
+
     // $ctrl.conditions  = [{hi: 'aosjdfo'}];
     $scope.inputConditions  = [{condition: ''}];
 
@@ -182,7 +186,24 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         });
         // console.log(response);
         console.log("end mongoupload service call");
+
+
+        //autocomplete values
+        // $scope.businessIssues = ['Communications evaluation','Post-Lauch','Market Understanding','Brand Opportunity','Concept Testing','Message testing']
+
+        //autocomplete values
+        // $scope.businessIssues = ['Communications evaluation','Post-Lauch','Market Understanding','Brand Opportunity','Concept Testing','Message testing']
+//autocomplete values
+
+
+
+
     }
+
+    // autocomplete values
+    $scope.businessIssues = ['Communications evaluation','Post-Lauch','Market Understanding','Brand Opportunity','Concept Testing','Message testing']
+
+
 
 });
 
