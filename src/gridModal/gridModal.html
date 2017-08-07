@@ -1,123 +1,156 @@
-<form role="form" class="grid-modal">
-    <!--{{testResponse}}-->
-    </br>
-    </br>
-    <div class="form-group">
-        <label for="inputID">
-            ID
-        </label>
-        <input type="text" class="my-form" id="inputID" ng-model="inputID"/>
+<div class="my-grid-modal-header">
+    Adding New Project
+</div>
+
+<div class="my-grid-modal-container">
+
+    <div class="my-grid-modal-tab">
+        Add Project
     </div>
-    <div class="form-group">
-        <label for="inputJobNumber">
-            Job Number
-        </label>
-        <input type="text" class="my-form" id="inputJobNumber" ng-model="inputJobNumber"/>
-    </div>
-    <div class="form-group">
-        <label for="inputProjectTitle">
-            Project Title
-        </label>
-        <input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />
-    </div>
-    <div class="form-group">
-        <label for="inputProjectLead">
-            Project Lead
-        </label>
-        <input type="text" class="my-form" id="inputProjectLead" ng-model="inputProjectLead" />
-    </div>
-    <div class="form-group">
-        <label for="inputClient">
-            Client
-        </label>
-        <input type="text" class="my-form" id="inputClient" ng-model="inputClient" />
-    </div>
-    <div class="form-group">
-        <label for="inputRegion">
-            Region
-        </label>
-        <input type="text" class="my-form" id="inputRegion" ng-model="inputRegion" />
-    </div>
-    <div class="form-group">
-        <label for="inputCountries">
-            Countries
-        </label>
-        <input type="text" class="my-form" id="inputCountries" ng-model="inputCountries" />
-    </div>
-    <div class="form-group">
-        <label for="inputTherapy">
-            Therapy
-        </label>
-        <input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />
-    </div>
-    <!--{{inputConditions}}-->
-    <div class="form-group">
-        <label for="inputConditions">
-            Conditions
-        </label>
-        <span ng-repeat="condition in inputConditions">
+    <div class="my-grid-modal-padding">
+
+        <form role="form" class="grid-modal">
+            <!--{{testResponse}}-->
+            <div class="form-group">
+                <label class="my-form-label" for="inputID">
+                    ID
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputID" ng-model="inputID"/>
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputJobNumber">
+                    Job Number
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputJobNumber" ng-model="inputJobNumber"/>
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputProjectTitle">
+                    Project Title
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputProjectLead">
+                    Project Lead
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputProjectLead" ng-model="inputProjectLead" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputClient">
+                    Client
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputClient" ng-model="inputClient" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputRegion">
+                    Region
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputRegion" ng-model="inputRegion" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputCountries">
+                    Countries
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputCountries" ng-model="inputCountries" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputTherapy">
+                    Therapy
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />
+            </div>
+            <!--{{inputConditions}}-->
+            <div class="form-group">
+                <label class="my-form-label" for="inputConditions">
+                    Conditions
+                </label>
+                </br>
+                <span ng-repeat="condition in inputConditions track by $index">
             <input type="text" class="my-form" id="inputConditions" ng-model="condition.condition" />
             <button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>
             <button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>
         </span>
-    </div>
-    <div class="form-group">
-        <label for="inputImmunology">
-            Immunology
-        </label>
-        <input type="text" class="my-form" id="inputImmunology" ng-model="inputImmunology" />
-    </div>
-    <div class="form-group">
-        <label for="inputNumberOfPCPs">
-            Number Of PCPs
-        </label>
-        <input type="text" class="my-form" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
-    </div>
-    <div class="form-group">
-        <label for="inputNumberOfNurses">
-            Number Of Nurses
-        </label>
-        <input type="text" class="my-form" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
-    </div>
-    <div class="form-group">
-        <label for="inputTotalNurseTime">
-            Total Nurse Time
-        </label>
-        <input type="text" class="my-form" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
-    </div>
-    <div class="form-group">
-        <label for="inputLostCancelled">
-            Lost/Cancelled
-        </label>
-        <input type="text" class="my-form" id="inputLostCancelled" ng-model="inputLostCancelled" />
-    </div>
-    <div class="form-group">
-        <label for="InputYear">
-            Year
-        </label>
-        <input type="text" class="my-form" id="InputYear" ng-model="inputYear" />
-    </div>
-    <div class="form-group">
-        <label for="inputNumberOfPatients">
-            Number Of Patients
-        </label>
-        <input type="text" class="my-form" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
-    </div>
-    <div class="form-group">
-        <label for="inputTotalPatientTime">
-            Total Patient Time
-        </label>
-        <input type="text" class="my-form" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
-    </div>
-    <div class="form-group">
-        <label for="inputBusinessIssue">
-            Business Issue
-        </label>
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputImmunology">
+                    Immunology
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputImmunology" ng-model="inputImmunology" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputNumberOfPCPs">
+                    Number Of PCPs
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputNumberOfNurses">
+                    Number Of Nurses
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputTotalNurseTime">
+                    Total Nurse Time
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputLostCancelled">
+                    Lost/Cancelled
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputLostCancelled" ng-model="inputLostCancelled" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="InputYear">
+                    Year
+                </label>
+                </br>
+                <input type="text" class="my-form" id="InputYear" ng-model="inputYear" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputNumberOfPatients">
+                    Number Of Patients
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputTotalPatientTime">
+                    Total Patient Time
+                </label>
+                </br>
+                <input type="text" class="my-form" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
+            </div>
+            <div class="form-group">
+                <label class="my-form-label" for="inputBusinessIssue">
+                    Business Issue
+                </label>
+                </br>
 
-        <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>
+                <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>
+            </div>
+        </form>
+
     </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="$ctrl.submit()">Submit</button>
-        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-    </div>
-</form>
+
+
+</div>
+
+<div class="my-form-modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.submit()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+</div>

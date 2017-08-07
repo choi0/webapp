@@ -11,6 +11,15 @@ click to expand (change cell template)
 expand all/collapse all button
 styling
 pull auto complete values from mongodb
+stop background scrolling
+warnings when you are adding a new field
+- conditions
+- business issues
+- therapy
+- lifecycle stage
+- client
+- therapy area
+- drug class/product
 loading bar for rows
 header/footer styling
 scrollbar

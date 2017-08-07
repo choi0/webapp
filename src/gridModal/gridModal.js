@@ -16,6 +16,9 @@ angular.module('angularbasic')
             controller: 'GridModalInstanceCtrl',
             controllerAs: '$ctrl',
             size: size,
+            windowClass: 'my-grid-modal',
+            backdrop: 'static',
+            // keyboard: false,
             appendTo: parentElem,
             resolve: {
                 items: function () {
