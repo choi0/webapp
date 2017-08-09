@@ -84,12 +84,18 @@
     min-width: 400px ;
     width: 900px;
     max-width: 900px;
+    /*min-height: 40px ;*/
+    /*height: 40px;*/
+    /*max-height: 40px;*/
 
 }
 .my-grid-modal-container {
     border: 3px solid #dedede;
     background-color: #f0f0f0;
-    max-height: 800px;
+    min-height: 400px;
+    height: 525px;
+    max-height: 600px;
+    /*height: 50%;*/
     min-width: 500px !important;
     max-width: 90%;
     margin: 0 auto;
