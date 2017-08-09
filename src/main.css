@@ -107,6 +107,54 @@
     vertical-align: middle;
 }
 
+.my-grid-modal-form .modal-dialog {
+    min-width: 400px ;
+    width: 900px;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin: 0 auto;
+    /*min-height: 40px ;*/
+    /*height: 40px;*/
+    /*max-height: 40px;*/
+
+}
+
+.my-grid-modal-form-cell {
+    float: left;
+    width: 33%;
+}
+
+.my-grid-modal-form-cell-input {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
+    width: 95%;
+    height: 44px;
+    border-radius: 0;
+    box-shadow: none;
+    border: 2px solid #dfdfdf;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-family: "FrutigerLTW01-55Roman", sans-serif;
+    font-size: 16px;
+    padding: 5px 5px 3px 5px;
+}
+
+.my-grid-modal-form-cell-label {
+    font-family: "FrutigerLTW01-55Roman", sans-serif;
+    font-size: 12px;
+    color: #879196;
+    /*color: #999999;*/
+    text-transform: uppercase;
+}
+
+.my-grid-modal-form-row {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
 .my-form-modal-footer {
     padding-bottom: 20px;
     padding-top: 20px;
@@ -191,3 +239,4 @@
     white-space: normal;
     overflow:visible;
 }
+

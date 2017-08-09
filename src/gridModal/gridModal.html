@@ -9,140 +9,293 @@
     </div>
     <div class="my-grid-modal-padding">
 
-        <form role="form" class="my-grid-modal">
+        <form role="form" class="my-grid-modal-form">
             <!--{{testResponse}}-->
-            <div class="form-group">
-                <label class="my-form-label" for="inputID">
-                    ID
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputID" ng-model="inputID"/>
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputJobNumber">
-                    Job Number
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputJobNumber" ng-model="inputJobNumber"/>
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputProjectTitle">
-                    Project Title
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputProjectLead">
-                    Project Lead
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputProjectLead" ng-model="inputProjectLead" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputClient">
-                    Client
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputClient" ng-model="inputClient" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputRegion">
-                    Region
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputRegion" ng-model="inputRegion" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputCountries">
-                    Countries
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputCountries" ng-model="inputCountries" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputTherapy">
-                    Therapy
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />
-            </div>
-            <!--{{inputConditions}}-->
-            <div class="form-group">
-                <label class="my-form-label" for="inputConditions">
-                    Conditions
-                </label>
-                </br>
-                <span ng-repeat="condition in inputConditions track by $index">
-            <input type="text" class="my-form" id="inputConditions" ng-model="condition.condition" />
-            <button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>
-            <button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>
-        </span>
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputImmunology">
-                    Immunology
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputImmunology" ng-model="inputImmunology" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputNumberOfPCPs">
-                    Number Of PCPs
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputNumberOfNurses">
-                    Number Of Nurses
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputTotalNurseTime">
-                    Total Nurse Time
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputLostCancelled">
-                    Lost/Cancelled
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputLostCancelled" ng-model="inputLostCancelled" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="InputYear">
-                    Year
-                </label>
-                </br>
-                <input type="text" class="my-form" id="InputYear" ng-model="inputYear" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputNumberOfPatients">
-                    Number Of Patients
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputTotalPatientTime">
-                    Total Patient Time
-                </label>
-                </br>
-                <input type="text" class="my-form" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
-            </div>
-            <div class="form-group">
-                <label class="my-form-label" for="inputBusinessIssue">
-                    Business Issue
-                </label>
-                </br>
+            <!--<div class="container">-->
+            <div class="my-grid-modal-form-row">
 
-                <input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-grid-modal-form-cell-label" for="inputID">
+                        ID
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputID" ng-model="inputID"/>
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputJobNumber">
+                        Job Number
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputJobNumber" ng-model="inputJobNumber"/>
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputProjectTitle">
+                        Project Title
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputProjectTitle" ng-model="inputProjectTitle" />
+                </div>
             </div>
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputID">-->
+                    <!--ID-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputID" ng-model="inputID"/>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputJobNumber">-->
+                    <!--Job Number-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputJobNumber" ng-model="inputJobNumber"/>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputProjectTitle">-->
+                    <!--Project Title-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />-->
+            <!--</div>-->
+            <div class="row">
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputProjectLead">
+                        Project Lead
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputProjectLead" ng-model="inputProjectLead" />
+                </div>
+
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputClient">
+                        Client
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputClient" ng-model="inputClient" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputRegion">
+                        Region
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputRegion" ng-model="inputRegion" />
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputProjectLead">-->
+                    <!--Project Lead-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputProjectLead" ng-model="inputProjectLead" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputClient">-->
+                    <!--Client-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputClient" ng-model="inputClient" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputRegion">-->
+                    <!--Region-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputRegion" ng-model="inputRegion" />-->
+            <!--</div>-->
+            <div class="row">
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputCountries">
+                        Countries
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputCountries" ng-model="inputCountries" />
+                </div>
+
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputTherapy">
+                        Therapy
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTherapy" ng-model="inputTherapy" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputConditions">
+                        Conditions
+                    </label>
+                    </br>
+                    <span ng-repeat="condition in inputConditions track by $index">
+                        <input type="text" class="my-grid-modal-form-cell-input" id="inputConditions" ng-model="condition.condition" />
+                        <button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>
+                        <button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>
+                    </span>
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputCountries">-->
+                    <!--Countries-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputCountries" ng-model="inputCountries" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputTherapy">-->
+                    <!--Therapy-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputTherapy" ng-model="inputTherapy" />-->
+            <!--</div>-->
+            <!--{{inputConditions}}-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputConditions">-->
+                    <!--Conditions-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<span ng-repeat="condition in inputConditions track by $index">-->
+                    <!--<input type="text" class="my-form" id="inputConditions" ng-model="condition.condition" />-->
+                    <!--<button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>-->
+                    <!--<button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>-->
+                <!--</span>-->
+            <!--</div>-->
+            <div class="row">
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputImmunology">
+                        Immunology
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputImmunology" ng-model="inputImmunology" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputNumberOfPCPs">
+                        Number Of PCPs
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputNumberOfNurses">
+                        Number Of Nurses
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputImmunology">-->
+                    <!--Immunology-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputImmunology" ng-model="inputImmunology" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputNumberOfPCPs">-->
+                    <!--Number Of PCPs-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputNumberOfNurses">-->
+                    <!--Number Of Nurses-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />-->
+            <!--</div>-->
+
+
+            <div class="row">
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputTotalNurseTime">
+                        Total Nurse Time
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputLostCancelled">
+                        Lost/Cancelled
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputLostCancelled" ng-model="inputLostCancelled" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="InputYear">
+                        Year
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="InputYear" ng-model="inputYear" />
+                </div>
+            </div>
+
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputTotalNurseTime">-->
+                    <!--Total Nurse Time-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputLostCancelled">-->
+                    <!--Lost/Cancelled-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputLostCancelled" ng-model="inputLostCancelled" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="InputYear">-->
+                    <!--Year-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="InputYear" ng-model="inputYear" />-->
+            <!--</div>-->
+
+
+            <div class="row">
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputNumberOfPatients">
+                        Number Of Patients
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputTotalPatientTime">
+                        Total Patient Time
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-form-label" for="inputBusinessIssue">
+                        Business Issue
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>
+
+                </div>
+            </div>
+
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputNumberOfPatients">-->
+                    <!--Number Of Patients-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputTotalPatientTime">-->
+                    <!--Total Patient Time-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="my-form-label" for="inputBusinessIssue">-->
+                    <!--Business Issue-->
+                <!--</label>-->
+                <!--</br>-->
+                <!--<input type="text" class="my-form" id="inputBusinessIssue" ng-model="inputBusinessIssue" uib-typeahead="name for name in businessIssues | filter:$viewValue | limitTo:8"/>-->
+            <!--</div>-->
+        <!--</div>-->
         </form>
 
     </div>
