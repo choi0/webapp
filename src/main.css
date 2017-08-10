@@ -1,6 +1,134 @@
 .add-conditions {
-    display: inline;
+    color: #666666;
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 5px;
+    height: 20px;
+    padding: 5px 5px 5px 5px;
+    margin: 0;
+    margin-top: 13px;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
 }
+.add-conditions:visited {
+    color: #666666; }
+.add-conditions:hover, .button:focus {
+    background-color: #f6f6f6;
+    text-decoration: none;
+    outline: none; }
+.add-conditions:active, .button.active, .button.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-color: #cfcfcf;
+    color: #d4d4d4;
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+.remove-conditions {
+    color: #666666;
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 5px;
+    height: 20px;
+    padding: 5px 5px 5px 5px;
+    margin: 0;
+    margin-top: 13px;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+.remove-conditions:visited {
+    color: #666666; }
+.remove-conditions:hover, .button:focus {
+    background-color: #f6f6f6;
+    text-decoration: none;
+    outline: none; }
+.remove-conditions:active, .button.active, .button.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-color: #cfcfcf;
+    color: #d4d4d4;
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+
+.button {
+    color: #666666;
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 5px;
+    height: 20px;
+    padding: 5px 5px 5px 5px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    /*-webkit-transition-duration: .3s;*/
+    /*transition-duration: .3s;*/
+    /*
+    * Disabled State
+    *
+    * The disabled state uses the class .disabled, is-disabled,
+    * and the form attribute disabled="disabled".
+    * The use of !important is only added because this is a state
+    * that must be applied to all buttons when in a disabled state.
+    */ }
+.button:visited {
+    color: #666666; }
+.button:hover, .button:focus {
+    background-color: #f6f6f6;
+    text-decoration: none;
+    outline: none; }
+.button:active, .button.active, .button.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-color: #cfcfcf;
+    color: #d4d4d4;
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
 
 .grid {
     padding: 0px;
@@ -125,11 +253,39 @@
     width: 33%;
 }
 
+.my-grid-modal-form-cell-10 {
+    float: left;
+    width: 10%;
+}
+.my-grid-modal-form-cell-20 {
+    float: left;
+    width: 20%;
+}
+.my-grid-modal-form-cell-25 {
+    float: left;
+    width: 25%;
+}
+
+.my-grid-modal-form-cell-50 {
+    float: left;
+    width: 50%;
+}
+.my-grid-modal-form-cell-100 {
+    float: left;
+    width: 100%;
+}
+
+.my-grid-modal-form-cell-multi {
+    float: left;
+    width: 50%;
+}
+
 .my-grid-modal-form-cell-input {
     display: inline-block;
-    margin-right: 30px;
+    margin-left: 15px;
+    /*margin-left: 5%;*/
     vertical-align: top;
-    width: 95%;
+    width: 85%;
     height: 44px;
     border-radius: 0;
     box-shadow: none;
@@ -140,8 +296,20 @@
     font-size: 16px;
     padding: 5px 5px 3px 5px;
 }
+.my-grid-modal-form-cell-input-title {
+    margin-right: 100px !important;
+    width: 93%;
+}
+
+.my-grid-modal-form-cell-input-multi {
+    width: 85%;
+    margin-bottom: 15px;
+
+    margin-left: 5px;
+}
 
 .my-grid-modal-form-cell-label {
+    margin-left: 15px;
     font-family: "FrutigerLTW01-55Roman", sans-serif;
     font-size: 12px;
     color: #879196;
@@ -154,6 +322,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
+}
+
+.row {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .my-form-modal-footer {
     padding-bottom: 20px;
@@ -219,9 +393,6 @@
     padding: 2px;
 }
 
-.remove-conditions {
-    display: inline;
-}
 
 .ui-grid-cell  {
     display : table-cell;

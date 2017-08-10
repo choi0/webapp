@@ -12,28 +12,21 @@
         <form role="form" class="my-grid-modal-form">
             <!--{{testResponse}}-->
             <!--<div class="container">-->
-            <div class="my-grid-modal-form-row">
+            <div class="row">
 
-                <div class="my-grid-modal-form-cell">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-20" hidden="true">
                     <label class="my-grid-modal-form-cell-label" for="inputID">
                         ID
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputID" ng-model="inputID"/>
                 </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputJobNumber">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-20">
+                    <label class="my-grid-modal-form-cell-label" for="inputJobNumber">
                         Job Number
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputJobNumber" ng-model="inputJobNumber"/>
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputProjectTitle">
-                        Project Title
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputProjectTitle" ng-model="inputProjectTitle" />
                 </div>
             </div>
             <!--<div class="form-group">-->
@@ -58,27 +51,32 @@
                 <!--<input type="text" class="my-form" id="inputProjectTitle" ng-model="inputProjectTitle" />-->
             <!--</div>-->
             <div class="row">
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputProjectLead">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-100">
+                    <label class="my-grid-modal-form-cell-label" for="inputProjectTitle">
+                        Project Title
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input my-grid-modal-form-cell-input-title" id="inputProjectTitle" ng-model="inputProjectTitle" />
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-50">
+                    <label class="my-grid-modal-form-cell-label" for="inputProjectLead">
                         Project Lead
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputProjectLead" ng-model="inputProjectLead" />
                 </div>
 
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputClient">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-50">
+                    <label class="my-grid-modal-form-cell-label" for="inputClient">
                         Client
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputClient" ng-model="inputClient" />
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputRegion">
-                        Region
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputRegion" ng-model="inputRegion" />
                 </div>
             </div>
             <!--<div class="form-group">-->
@@ -104,29 +102,49 @@
             <!--</div>-->
             <div class="row">
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputCountries">
+                    <label class="my-grid-modal-form-cell-label" for="inputRegion">
+                        Region
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputRegion" ng-model="inputRegion" />
+                </div>
+                <div class="my-grid-modal-form-cell">
+                    <label class="my-grid-modal-form-cell-label" for="inputCountries">
                         Countries
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputCountries" ng-model="inputCountries" />
                 </div>
-
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputTherapy">
+                    <label class="my-grid-modal-form-cell-label" for="inputImmunology">
+                        Immunology
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputImmunology" ng-model="inputImmunology" />
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-50">
+                    <label class="my-grid-modal-form-cell-label" for="inputTherapy">
                         Therapy
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputTherapy" ng-model="inputTherapy" />
                 </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputConditions">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-multi">
+                    <label class="my-grid-modal-form-cell-label" for="inputConditions">
                         Conditions
                     </label>
                     </br>
                     <span ng-repeat="condition in inputConditions track by $index">
-                        <input type="text" class="my-grid-modal-form-cell-input" id="inputConditions" ng-model="condition.condition" />
-                        <button ng-if="inputConditions.length > 1" class="remove-condition" ng-click="removeCondition($index)">remove fields</button>
-                        <button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>
+                        <input type="text" class="my-grid-modal-form-cell-input my-grid-modal-form-cell-input-multi" id="inputConditions" ng-model="condition.condition" />
+                        <span>
+                            <button ng-if="inputConditions.length > 1" class="remove-conditions" ng-click="removeCondition($index)">-</button>
+                            <button ng-if="$last" class="add-conditions" ng-click="addCondition()">+</button>
+                        </span>
                     </span>
                 </div>
             </div>
@@ -156,27 +174,42 @@
                     <!--<button ng-if="$last" class="add-condition" ng-click="addCondition()">Add fields</button>-->
                 <!--</span>-->
             <!--</div>-->
+
+
+
+
+
+
+
+
             <div class="row">
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputImmunology">
-                        Immunology
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputImmunology" ng-model="inputImmunology" />
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputNumberOfPCPs">
-                        Number Of PCPs
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputNumberOfNurses">
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-25">
+                    <label class="my-grid-modal-form-cell-label" for="inputNumberOfNurses">
                         Number Of Nurses
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfNurses" ng-model="inputNumberOfNurses" />
+                </div>
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-25">
+                    <label class="my-grid-modal-form-cell-label" for="inputTotalNurseTime">
+                        Total Nurse Time
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
+                </div>
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-25">
+                    <label class="my-grid-modal-form-cell-label" for="inputNumberOfPatients">
+                        Number Of Patients
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
+                </div>
+                <div class="my-grid-modal-form-cell my-grid-modal-form-cell-25">
+                    <label class="my-grid-modal-form-cell-label" for="inputTotalPatientTime">
+                        Total Patient Time
+                    </label>
+                    </br>
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
                 </div>
             </div>
             <!--<div class="form-group">-->
@@ -204,21 +237,26 @@
 
             <div class="row">
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputTotalNurseTime">
-                        Total Nurse Time
+                    <label class="my-grid-modal-form-cell-label" for="inputNumberOfPCPs">
+                        Number Of PCPs
                     </label>
                     </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalNurseTime" ng-model="inputTotalNurseTime" />
+                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPCPs" ng-model="inputNumberOfPCPs" />
                 </div>
+            </div>
+
+
+
+            <div class="row">
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputLostCancelled">
+                    <label class="my-grid-modal-form-cell-label" for="inputLostCancelled">
                         Lost/Cancelled
                     </label>
                     </br>
                     <input type="text" class="my-grid-modal-form-cell-input" id="inputLostCancelled" ng-model="inputLostCancelled" />
                 </div>
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="InputYear">
+                    <label class="my-grid-modal-form-cell-label" for="InputYear">
                         Year
                     </label>
                     </br>
@@ -251,21 +289,7 @@
 
             <div class="row">
                 <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputNumberOfPatients">
-                        Number Of Patients
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputNumberOfPatients" ng-model="inputNumberOfPatients" />
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputTotalPatientTime">
-                        Total Patient Time
-                    </label>
-                    </br>
-                    <input type="text" class="my-grid-modal-form-cell-input" id="inputTotalPatientTime" ng-model="inputTotalPatientTime" />
-                </div>
-                <div class="my-grid-modal-form-cell">
-                    <label class="my-form-label" for="inputBusinessIssue">
+                    <label class="my-grid-modal-form-cell-label" for="inputBusinessIssue">
                         Business Issue
                     </label>
                     </br>
