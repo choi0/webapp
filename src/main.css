@@ -9,10 +9,7 @@
     text-align: center;
     line-height: 5px;
     height: 20px;
-    padding: 5px 5px 5px 5px;
-    margin: 0;
-    margin-top: 13px;
-    display: inline-block;
+    /*display: inline-block;*/
     appearance: none;
     cursor: pointer;
     border: none;
@@ -48,11 +45,6 @@
     font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-decoration: none;
     text-align: center;
-    line-height: 5px;
-    height: 20px;
-    padding: 5px 5px 5px 5px;
-    margin: 0;
-    margin-top: 13px;
     display: inline-block;
     appearance: none;
     cursor: pointer;
@@ -250,42 +242,55 @@
 
 .my-grid-modal-form-cell {
     float: left;
+    /*display: inline-block;*/
+    /*margin-left:auto;margin-right:auto;*/
     width: 33%;
 }
 
 .my-grid-modal-form-cell-10 {
-    float: left;
     width: 10%;
 }
 .my-grid-modal-form-cell-20 {
-    float: left;
     width: 20%;
 }
 .my-grid-modal-form-cell-25 {
-    float: left;
     width: 25%;
 }
-
+.my-grid-modal-form-cell-33 {
+    width: 33%;
+}
+.my-grid-modal-form-cell-34 {
+    width: 34%;
+}
+.my-grid-modal-form-cell-45 {
+    width: 45%;
+}
 .my-grid-modal-form-cell-50 {
-    float: left;
     width: 50%;
+}
+.my-grid-modal-form-cell-70 {
+    width: 70%;
+}
+.my-grid-modal-form-cell-80 {
+    width: 80%;
 }
 .my-grid-modal-form-cell-100 {
-    float: left;
     width: 100%;
 }
+.my-grid-modal-form-cell-input-outer {
+    padding: 0px 15px 0px 15px;
 
-.my-grid-modal-form-cell-multi {
-    float: left;
-    width: 50%;
 }
 
 .my-grid-modal-form-cell-input {
-    display: inline-block;
-    margin-left: 15px;
+    /*display: inline-block;*/
+    /*margin-left: 5ex;*/
+    /*margin-right: 5ex;*/
     /*margin-left: 5%;*/
+    display: block;
+    /*margin : 0 auto;*/
     vertical-align: top;
-    width: 85%;
+    width: 100%;
     height: 44px;
     border-radius: 0;
     box-shadow: none;
@@ -295,17 +300,45 @@
     font-family: "FrutigerLTW01-55Roman", sans-serif;
     font-size: 16px;
     padding: 5px 5px 3px 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
-.my-grid-modal-form-cell-input-title {
-    margin-right: 100px !important;
-    width: 93%;
+
+.my-grid-modal-form-cell-input-button-group {
+    width: 10%;
+    vertical-align: top;
+    float: right;
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+.my-grid-modal-form-cell-input-button-top {
+    width: 100%;
+    height: 50%;
+    vertical-align: top;
+    float: right;
+    /*margin: 0px 0px 0px 0px;*/
+    /*margin: 0 auto;*/
+    padding: 0px 3px 0px 3px;
+}
+
+.my-grid-modal-form-cell-input-button-bottom {
+    width: 100%;
+    height: 50%;
+    vertical-align: bottom;
+    float: right;
+    /*margin: 0px 0px 0px 0px;*/
+    /*margin: 0 auto;*/
+    padding: 0px 3px 0px 3px;
 }
 
 .my-grid-modal-form-cell-input-multi {
-    width: 85%;
+    width: 90%;
+    display: inline-block;
+    /*display: inline-block;*/
     margin-bottom: 15px;
 
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 .my-grid-modal-form-cell-label {
@@ -348,7 +381,8 @@
     text-align: center;
 }
 .my-grid-modal-padding {
-    padding: 10px 30px 30px 30px;
+    /*padding: 10px 50px 30px 50px;*/
+    padding: 10px 30px 20px 30px;
     background-color: #ffffff;
     box-shadow: 5px 5px 5px lightgrey;
     text-align: left;
@@ -360,7 +394,8 @@
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     text-align: center;
-    /*font-size: 15pt;*/
+    font-size: 12pt;
+    font-family: sans-serif;
     min-width: 150px;
     max-width: 200px;
     padding-left: 25px;
