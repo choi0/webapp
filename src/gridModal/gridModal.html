@@ -168,11 +168,12 @@
                         <div class="my-grid-modal-form-cell-input-button-group">
                             <div class="my-grid-modal-form-cell-input-button-top">
 
-                            <button ng-if="inputConditions.length > 1" class="remove-conditions" ng-click="removeCondition($index)">-</button>
+                                <button type="button"  ng-if="inputConditions.length > 1" class="btn btn-sm btn-danger minus-button merge-top-left-button remove-conditions"  ng-click="removeCondition($index)"><span class="fa fa-minus"></span></button>
+                            <!--<button ng-if="inputConditions.length > 1" class="remove-conditions" ng-click="removeCondition($index)">-</button>-->
                             </div>
                             <div class="my-grid-modal-form-cell-input-button-bottom">
-
-                            <button ng-if="$last" class="add-conditions" ng-click="addCondition()">+</button>
+                                <button  ng-if="$last" type="button" class="btn btn-success  add-conditions" ng-click="addCondition()"><span class="fa fa-plus"></span></button>
+                            <!--<button ng-if="$last" class="add-conditions" ng-click="addCondition()">+</button>-->
                             </div>
                         </div>
                     </span>
