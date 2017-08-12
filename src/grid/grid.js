@@ -50,6 +50,8 @@ angular.module('angularbasic')
                 data: 'mongoData',
                 // rowTemplate: '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>',
 
+                enableRowSelection: true,
+                selectionRowHeaderWidth: 35,
                 headerTemplate: 'grid/header_template.html',
                 // rowTemplate: '<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"'+
                 // 'ui-grid-one-bind-id-grid="rowRenderIndex + \'-\' + col.uid + \'-cell\'"'+
@@ -68,7 +70,7 @@ angular.module('angularbasic')
                     { field:'therapy', name:'therapy', width:150 },
                     // { field: 'conditions', name: 'conditions', cellTemplate:'<div ng-repeat="item in row.entity[col.field]">{{item}}</div>', width:150 },
                     //    <div ng-style="{ 'cursor': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>
-                    // { field: 'conditions', name: 'conditions', cellTemplate:'<div class="ui-grid-cell-contents" ng-repeat="item in row.entity[col.field]">{{item}}</div>', width:150 },
+                    { field: 'conditions', name: 'conditions', cellTemplate:'<div class="ui-grid-cell-contents" ng-repeat="item in row.entity[col.field]">{{item}}</div>', width:150 },
                     { field:'immunology', name:'immunology', width:150 },
                     { field:'number_of_PCPs', name:'number_of_PCPs', width:175 },
                     { field:'number_of_nurses', name:'number_of_nurses', width:175 },

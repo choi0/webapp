@@ -97,7 +97,7 @@
     /*padding: 0px;*/
     width: 90%;
     height: 600px;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     margin: 0 auto;
 }
 .my-grid-modal .modal-dialog {
@@ -346,3 +346,21 @@
     overflow:visible;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.ui-grid-header-cell {float: left;}*/
