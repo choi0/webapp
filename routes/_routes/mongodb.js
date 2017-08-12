@@ -9,13 +9,13 @@ module.exports = function (router) {
     // }
     router.post('/api/mongodb/queryDocuments', function (request, response) {
         API.mongodb.queryDocuments(request.body, function (req, res) {
-            console.log("router response:")
+            // console.log("router response:")
             response.send(res);
         });
     });
     router.post('/api/mongodb/uploadDocument', function (request, response) {
         API.mongodb.uploadDocument(request.body, function (req, res) {
-            console.log("router response:")
+            // console.log("router response:")
             response.send(res);
         });
     });

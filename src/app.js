@@ -7,7 +7,8 @@ var app = angular.module('angularbasic',
         'ngRoute',
         'ngSanitize',
         'ngTouch',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'smart-table'
     ]);
 
 

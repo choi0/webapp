@@ -21,8 +21,41 @@
             </br>
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
-
-
+<div class="my-grid">
+    <table st-table="mongoData" class="table table-striped">
+        <thead>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>birth date</th>
+            <th>balance</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mongoDatum in mongoData">
+            <td>{{mongoDatum.job_number}}</td>
+            <td>{{mongoDatum.project_title}}</td>
+            <td>{{mongoDatum.project_lead}}</td>
+            <td>{{mongoDatum.client}}</td>
+            <!--<td><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>-->
+            <td>{{mongoDatum.countries}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-items-by-page="5" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+    <!--<div st-items-by-page="10" st-pagination="" st-template="grid/custom_pagination_nav.html">-->
+        <!--<ng-include src="'grid/custom_pagination_nav.html'">-->
+        <!--</ng-include>-->
+    <!--</div>-->
+    <!--<div ng-controller="FooterCtrl">-->
+</div>
 
 
         <!--<div class="my-carousel" id="carousel-467869" >-->
@@ -78,7 +111,6 @@
 
 
     <!--</div>-->
-    </div>
 <!--</div>-->
 
 
