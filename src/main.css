@@ -335,11 +335,11 @@
     overflow:visible;
     position: static;
 }
-/*.ui-grid-row {*/
-    /*display : table-row;*/
-    /*height: auto !important;*/
-    /*position: static;*/
-/*}*/
+.ui-grid-row {
+    display : table-row;
+    height: auto !important;
+    position: static;
+}
 .ui-grid-cell-contents {
     height: auto !important;
     white-space: normal;
@@ -347,8 +347,16 @@
 }
 
 
+/*.ui-grid-row {*/
+    /*display: table-row;*/
+/*}*/
 
+.ui-grid-cell {
+    float: none;
+    display: table-cell;
+}
 
+/*.gridOptions*/
 
 
 

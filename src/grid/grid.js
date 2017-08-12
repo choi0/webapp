@@ -48,6 +48,7 @@ angular.module('angularbasic')
             console.log("end uuid service call");
             $scope.gridOptions = {
                 data: 'mongoData',
+                // rowHeight: 'auto',
                 // rowTemplate: '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>',
 
                 enableRowSelection: true,
