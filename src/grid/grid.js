@@ -83,6 +83,18 @@ angular.module('angularbasic')
                     { field:'business_issue', name:'business_issue', width:150 }
                 ],
                 enableColumnResizing: true,
+                enableGridMenu: true,
+                enableSelectAll: true,
+                exporterCsvFilename: 'myFile.csv',
+                exporterMenuPdf: false,
+                exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
+                exporterFieldCallback: function ( grid, row, col, value ) {
+                    if ( col.name === 'conditions' ) {
+                        value = value.join(", ");
+
+                    }
+                    return value;
+                },
 
                 onRegisterApi: function(gridApi){
                     $scope.gridApi = gridApi;

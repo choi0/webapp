@@ -359,7 +359,9 @@
 /*.gridOptions*/
 
 
-
+/*.ui-grid-viewport {*/
+    /*overflow-anchor: none;*/
+/*}*/
 
 
 

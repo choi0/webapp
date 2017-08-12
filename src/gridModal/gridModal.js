@@ -118,11 +118,11 @@ angular.module('angularbasic').controller('GridModalInstanceCtrl',  function ($u
         conditionsArray = [];
         for(var i = 0; i < $scope.inputConditions.length; i++) {
             if($scope.inputConditions[i].condition) {
-                conditionsArray.push($scope.inputConditions[i]);
+                conditionsArray.push($scope.inputConditions[i].condition);
             }
         }
         conditionsArray.sort(function (a,b) {
-            var nameA=a.condition.toLowerCase(), nameB=b.condition.toLowerCase()
+            var nameA=a.toLowerCase(), nameB=b.toLowerCase()
             if (nameA < nameB) //sort string ascending
                 return -1
             if (nameA > nameB)
