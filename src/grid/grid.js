@@ -8,9 +8,7 @@ angular.module('angularbasic')
         '$http',
         '$timeout',
         '$interval',
-        'uiGridConstants',
-        'uiGridGroupingConstants',
-        'MongoDBService', function ($scope,__env,  $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, MongoDBService) {
+        'MongoDBService', function ($scope,__env,  $http, $timeout, $interval, MongoDBService) {
 
             $scope.mongoData = [];
             console.log("start uuid service call");
@@ -46,66 +44,6 @@ angular.module('angularbasic')
             });
             // console.log(response);
             console.log("end uuid service call");
-            $scope.gridOptions = {
-                data: 'mongoData',
-                // rowHeight: 'auto',
-                // rowTemplate: '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>',
-
-                enableRowSelection: true,
-                selectionRowHeaderWidth: 35,
-                headerTemplate: 'grid/header_template.html',
-                // rowTemplate: '<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"'+
-                // 'ui-grid-one-bind-id-grid="rowRenderIndex + \'-\' + col.uid + \'-cell\'"'+
-                // 'class="ui-grid-cell"'+
-                // 'ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader }"'+
-                // 'role="{{col.isRowHeader ? \'rowheader\' : \'gridcell\'}}" ui-grid-cell> </div>',
-                rowTemplate: 'grid/row_template.html',
-                columnDefs: [
-                    { field:'ID', name:'ID', width:50 },
-                    { field:'job_number', name:'job_num1ber', width:125 },
-                    { field:'project_title', name:'proj1ect_title', width:125 },
-                    { field:'project_lead', name:'project_lead', width:125 },
-                    { field:'client', name:'client', width:150 },
-                    { field:'region', name:'region', width:150 },
-                    { field:'countries', name:'countries', width:150 },
-                    { field:'therapy', name:'therapy', width:150 },
-                    // { field: 'conditions', name: 'conditions', cellTemplate:'<div ng-repeat="item in row.entity[col.field]">{{item}}</div>', width:150 },
-                    //    <div ng-style="{ 'cursor': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>
-                    { field: 'conditions', name: 'conditions', cellTemplate:'<div class="ui-grid-cell-contents" ng-repeat="item in row.entity[col.field]">{{item}}</div>', width:150 },
-                    { field:'immunology', name:'immunology', width:150 },
-                    { field:'number_of_PCPs', name:'number_of_PCPs', width:175 },
-                    { field:'number_of_nurses', name:'number_of_nurses', width:175 },
-                    { field:'total_nurse_time', name:'total_nurse_time', width:150 },
-                    { field:'lost_cancelled', name:'lost_cancelled', width:150 },
-                    { field:'year', name:'year', width:50 },
-                    { field:'number_of_patients', name:'number_of_patients', width:200 },
-                    { field:'total_patient_time', name:'total_patient_time', width:175 },
-                    { field:'business_issue', name:'business_issue', width:150 }
-                ],
-                enableColumnResizing: true,
-                enableGridMenu: true,
-                enableSelectAll: true,
-                exporterCsvFilename: 'myFile.csv',
-                exporterMenuPdf: false,
-                exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
-                exporterFieldCallback: function ( grid, row, col, value ) {
-                    if ( col.name === 'conditions' ) {
-                        value = value.join(", ");
-
-                    }
-                    return value;
-                },
-
-                onRegisterApi: function(gridApi){
-                    $scope.gridApi = gridApi;
-                }
-            };
-
-            $scope.state = {};
-            $scope.restoreState = function() {
-                $scope.gridApi.saveState.restore( $scope, $scope.state );
-            };
-
             
             
             
