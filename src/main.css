@@ -336,15 +336,15 @@
     position: static;
 }
 .ui-grid-row {
-    display : table-row;
+    /*display : table-row;*/
     height: auto !important;
-    position: static;
+    /*position: static;*/
 }
-.ui-grid-cell-contents {
-    height: auto !important;
-    white-space: normal;
-    overflow:visible;
-}
+/*.ui-grid-cell-contents {*/
+    /*height: auto !important;*/
+    /*white-space: normal;*/
+    /*overflow:visible;*/
+/*}*/
 
 
 /*.ui-grid-row {*/
