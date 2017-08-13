@@ -93,13 +93,55 @@
     font-size: 9pt;
 }
 
+.my-grid-container {
+
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border: #ff00da;
+    border-style: solid;
+    border-width: 3px;
+}
+
 .my-grid {
     /*padding: 0px;*/
-    width: 90%;
-    height: 600px;
+    width: 1900px !important;
+    height: 400px;
     /*vertical-align: middle;*/
+    /*overflow-x: scroll;*/
     margin: 0 auto;
+    margin-bottom: 0 !important;
 }
+
+.my-grid-row {
+    width: 1400px !important;
+    /*overflow-x: scroll;*/
+}
+
+.my-grid-header {
+
+    width: 400px !important;
+    border: #ff00da;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
+.my-grid-cell {
+
+    width: 400px !important;
+    border: #ff00da;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
 .my-grid-modal .modal-dialog {
     min-width: 400px ;
     width: 900px;
@@ -139,6 +181,7 @@
     /*max-height: 40px;*/
 
 }
+
 
 .my-grid-modal-form-cell {
     float: left;

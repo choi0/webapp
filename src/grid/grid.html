@@ -21,45 +21,70 @@
             </br>
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
-<div class="my-grid">
-    <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped">
+<div class="my-grid-container">
+    <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid">
         <thead>
         <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th>birth date</th>
-            <th>balance</th>
-            <th>email</th>
+            <th class="my-grid-header">ID</th>
+            <th class="my-grid-header">job_number</th>
+            <th class="my-grid-header">project_title</th>
+            <th class="my-grid-header">project_lead</th>
+            <th class="my-grid-header">client</th>
+            <th class="my-grid-header">region</th>
+            <th class="my-grid-header">countries</th>
+            <th class="my-grid-header">therapy</th>
+            <th class="my-grid-header">conditions</th>
+            <th class="my-grid-header">immunology</th>
+            <th class="my-grid-header">number_of_PCPs</th>
+            <th class="my-grid-header">number_of_nurses</th>
+            <th class="my-grid-header">total_nurse_time</th>
+            <th class="my-grid-header">lost_cancelled</th>
+            <th class="my-grid-header">year</th>
+            <th class="my-grid-header">number_of_patients</th>
+            <th class="my-grid-header">total_patient_time</th>
+            <th class="my-grid-header">business_issue</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="mongoDatum in displayedMongoData">
-            <td>{{mongoDatum.job_number}}</td>
-            <td>{{mongoDatum.project_title}}</td>
-            <td>{{mongoDatum.project_lead}}</td>
-            <td>{{mongoDatum.client}}</td>
-            <!--<td><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>-->
-            <td>{{mongoDatum.countries}}</td>
+            <td class="my-grid-cell">{{mongoDatum.id}}</td>
+            <td class="my-grid-cell">{{mongoDatum.job_number}}</td>
+            <td class="my-grid-cell">{{mongoDatum.project_title}}</td>
+            <td class="my-grid-cell">{{mongoDatum.project_lead}}</td>
+            <td class="my-grid-cell">{{mongoDatum.client}}</td>
+            <td class="my-grid-cell">{{mongoDatum.region}}</td>
+            <td class="my-grid-cell">{{mongoDatum.countries}}</td>
+            <td class="my-grid-cell">{{mongoDatum.therapy}}</td>
+            <td class="my-grid-cell"><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>
+            <td class="my-grid-cell">{{mongoDatum.immunology}}</td>
+            <td class="my-grid-cell">{{mongoDatum.number_of_PCPs}}</td>
+            <td class="my-grid-cell">{{mongoDatum.number_of_nurses}}</td>
+            <td class="my-grid-cell">{{mongoDatum.total_nurse_time}}</td>
+            <td class="my-grid-cell">{{mongoDatum.lost_cancelled}}</td>
+            <td class="my-grid-cell">{{mongoDatum.year}}</td>
+            <td class="my-grid-cell">{{mongoDatum.number_of_patients}}</td>
+            <td class="my-grid-cell">{{mongoDatum.total_patient_time}}</td>
+            <td class="my-grid-cell">{{mongoDatum.business_issue}}</td>
         </tr>
         </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="5" class="text-center">
-                <div st-items-by-page="2" st-table="displayedMongoData" st-safe-src="mongoData" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
-            </td>
-        </tr>
-        </tfoot>
     </table>
     <!--<div st-items-by-page="10" st-pagination="" st-template="grid/custom_pagination_nav.html">-->
         <!--<ng-include src="'grid/custom_pagination_nav.html'">-->
         <!--</ng-include>-->
     <!--</div>-->
     <!--<div ng-controller="FooterCtrl">-->
-    <button type="button" ng-click="clickMe()">click</button>
 </div>
+<table style="margin: 0 auto">
+    <tr>
+        <td colspan="5" class="text-center">
+            <div st-items-by-page="6" st-table="displayedMongoData" st-safe-src="mongoData" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
+        </td>
+    </tr>
+</table>
 
 
-        <!--<div class="my-carousel" id="carousel-467869" >-->
+
+<!--<div class="my-carousel" id="carousel-467869" >-->
             <!--<ol class="carousel-indicators">-->
                 <!--<li data-slide-to="0" data-target="#carousel-467869">-->
                 <!--</li>-->
