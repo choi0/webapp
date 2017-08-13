@@ -10,102 +10,71 @@ angular.module('angularbasic')
         '$interval',
         'MongoDBService', function ($scope,__env,  $http, $timeout, $interval, MongoDBService) {
 
-            $scope.mongoData = [
-                {
-                    "ID": "1",
-                    "job_number": "1",
-                    "project_title": "project_title1",
-                    "project_lead": "project_lead1",
-                    "client": "client1",
-                    "region": "1",
-                    "countries": "countries1",
-                    "therapy": "therapy1",
-                    "conditions": "h",
-                    "immunology": "immunology1",
-                    "number_of_PCPs": "1",
-                    "number_of_nurses": "1",
-                    "total_nurse_time": "1h",
-                    "lost_cancelled": "lost/cancelled1",
-                    "year": "1111",
-                    "number_of_patients": "1",
-                    "total_patient_time": "1",
-                    "business_issue": "business_issue1"
-                },
-                {
-                    "ID": "2",
-                    "job_number": "2",
-                    "project_title": "project_title2",
-                    "project_lead": "project_lead2",
-                    "client": "client2",
-                    "region": "2",
-                    "countries": "countries2",
-                    "therapy": "therapy2",
-                    "conditions": "h",
-                    "immunology": "3",
-                    "number_of_PCPs": "2",
-                    "number_of_nurses": "2",
-                    "total_nurse_time": "2h",
-                    "lost_cancelled": "lost/cancelled2",
-                    "year": "2222",
-                    "number_of_patients": "3",
-                    "total_patient_time": "2",
-                    "business_issue": "business_issue2"
-                },
-                {
-                    "ID": "3",
-                    "job_number": "3",
-                    "project_title": "project_title3",
-                    "project_lead": "project_lead3",
-                    "client": "client3",
-                    "region": "3",
-                    "countries": "countries3",
-                    "therapy": "therapy3",
-                    "conditions": "h",
-                    "immunology": "immunology3",
-                    "number_of_PCPs": "3",
-                    "number_of_nurses": "3",
-                    "total_nurse_time": "3h",
-                    "lost_cancelled": "lost/cancelled3",
-                    "year": "3333",
-                    "number_of_patients": "3",
-                    "total_patient_time": "3",
-                    "business_issue": "business_issue3"
-                }];
-            // console.log("start uuid service call");
-            // MongoDBService.queryDocuments(function(req,res) {
-            //     // console.log("Received MongoDB data to the Angular UI")
-            //     for(var i=0; i < res.data.length; i++) {
-            //         // console.log(res);
-            //         var data = res.data[i];
-            //
-            //         //building the "conditions" string
-            //         var stringBuilder = [];
-            //         for (var j =0; data.conditions && j < data.conditions.length; j++) {
-            //             // console.log(data.conditions[j]);
-            //
-            //             // for (x in data.conditions[j]) {
-            //             //     console.log(j + ": data=" + x);
-            //                 stringBuilder.push(data.conditions[j]);
-            //             // }
-            //         }
-            //         // stringBuilder.join('  0   ');
-            //         // console.log(stringBuilder);
-            //         stringBuilder.innerHTML = stringBuilder.join("</br>");
-            //         // console.log(stringBuilder);
-            //         data.conditions = stringBuilder;
-            //         // console.log("ARRAY VALUE FOR " + i);
-            //         // console.dir(data);
-            //         // console.dir(data);
-            //         // data.conditions = data.conditions.split(',').join("<br />")
-            //         // console.dir(data);
-            //         $scope.mongoData.push(data);
-            //         // $scope.mongoData.push(res.data[i]);
-            //     }
-            // });
+            $scope.mongoData = [];
+            $scope.displayedMongoData = []
+            // $scope.displayedMongoData = [].concat($scope.mongoData);
+            console.log("start uuid service call");
+            MongoDBService.queryDocuments(function(req,res) {
+                // console.log("Received MongoDB data to the Angular UI")
+                for(var i=0; i < res.data.length; i++) {
+                    // console.log(res);
+                    var data = res.data[i];
+
+                    //building the "conditions" string
+                    var stringBuilder = [];
+                    for (var j =0; data.conditions && j < data.conditions.length; j++) {
+                        // console.log(data.conditions[j]);
+
+                        // for (x in data.conditions[j]) {
+                        //     console.log(j + ": data=" + x);
+                            stringBuilder.push(data.conditions[j]);
+                        // }
+                    }
+                    // stringBuilder.join('  0   ');
+                    // console.log(stringBuilder);
+                    stringBuilder.innerHTML = stringBuilder.join("</br>");
+                    // console.log(stringBuilder);
+                    data.conditions = stringBuilder;
+                    // console.log("ARRAY VALUE FOR " + i);
+                    // console.dir(data);
+                    // console.dir(data);
+                    // data.conditions = data.conditions.split(',').join("<br />")
+                    // console.dir(data);
+                    $scope.mongoData.push(data);
+                    $scope.displayedMongoData = [].concat($scope.mongoData);
+                    // $scope.mongoData.push(res.data[i]);
+                }
+            });
 
 
             console.log("ami??");
 
+            // $scope.clickMe = function() {
+            //     $scope.displayedMongoData = $scope.mongoData;
+            // }
+            $scope.clickMe = function() {
+                $scope.mongoData.push(
+                    {
+                        "ID": "2",
+                        "job_number": "2",
+                        "project_title": "project_title2",
+                        "project_lead": "project_lead2",
+                        "client": "client2",
+                        "region": "2",
+                        "countries": "countries2",
+                        "therapy": "therapy2",
+                        "conditions": ["cond3","cond4"],
+                        "immunology": "3",
+                        "number_of_PCPs": "2",
+                        "number_of_nurses": "2",
+                        "total_nurse_time": "2h",
+                        "lost_cancelled": "lost/cancelled2",
+                        "year": "2222",
+                        "number_of_patients": "3",
+                        "total_patient_time": "2",
+                        "business_issue": "business_issue2"
+                    })
+            }
 
             // console.log(response);
             // console.log("end uuid service call");
@@ -176,18 +145,21 @@ angular.module('angularbasic')
             
             $scope.queryDocuments = function(){
                 console.log("start uuid service call");
+
                 MongoDBService.queryDocuments(function(req,res) {
                     // console.log("Received MongoDB data to the Angular UI")
-                    console.log(res);
-                    var data = res.data;
-                    console.dir(data);
-                    data.conditions = "poop";
-                    console.dir(data);
-                    $scope.mongoData.push(data);
+                    for(var i=0; i < res.data.length; i++) {
+                        var data = res.data[i];
 
-
-
-
+                        //building the "conditions" string
+                        var stringBuilder = [];
+                        for (var j =0; data.conditions && j < data.conditions.length; j++) {
+                            stringBuilder.push(data.conditions[j]);
+                        }
+                        stringBuilder.innerHTML = stringBuilder.join("</br>");
+                        data.conditions = stringBuilder;
+                        $scope.mongoData.push(data);
+                    }
                 });
                 // console.log(response);
                 console.log("end uuid service call");
