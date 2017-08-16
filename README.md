@@ -7,6 +7,9 @@ dynamic row size //doesnt make sense unless we do a char cap?
 add restore state button
 array for conditions
 project input modal
+fixed header
+moveable columns
+search on columns/search on all
 click to expand (change cell template)
 expand all/collapse all button
 styling

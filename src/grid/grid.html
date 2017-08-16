@@ -22,52 +22,72 @@
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
 <div class="my-grid-container">
-    <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid">
-        <thead>
-        <tr>
-            <th class="my-grid-header">ID</th>
-            <th class="my-grid-header">job_number</th>
-            <th class="my-grid-header">project_title</th>
-            <th class="my-grid-header">project_lead</th>
-            <th class="my-grid-header">client</th>
-            <th class="my-grid-header">region</th>
-            <th class="my-grid-header">countries</th>
-            <th class="my-grid-header">therapy</th>
-            <th class="my-grid-header">conditions</th>
-            <th class="my-grid-header">immunology</th>
-            <th class="my-grid-header">number_of_PCPs</th>
-            <th class="my-grid-header">number_of_nurses</th>
-            <th class="my-grid-header">total_nurse_time</th>
-            <th class="my-grid-header">lost_cancelled</th>
-            <th class="my-grid-header">year</th>
-            <th class="my-grid-header">number_of_patients</th>
-            <th class="my-grid-header">total_patient_time</th>
-            <th class="my-grid-header">business_issue</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="mongoDatum in displayedMongoData">
-            <td class="my-grid-cell">{{mongoDatum.id}}</td>
-            <td class="my-grid-cell">{{mongoDatum.job_number}}</td>
-            <td class="my-grid-cell">{{mongoDatum.project_title}}</td>
-            <td class="my-grid-cell">{{mongoDatum.project_lead}}</td>
-            <td class="my-grid-cell">{{mongoDatum.client}}</td>
-            <td class="my-grid-cell">{{mongoDatum.region}}</td>
-            <td class="my-grid-cell">{{mongoDatum.countries}}</td>
-            <td class="my-grid-cell">{{mongoDatum.therapy}}</td>
-            <td class="my-grid-cell"><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>
-            <td class="my-grid-cell">{{mongoDatum.immunology}}</td>
-            <td class="my-grid-cell">{{mongoDatum.number_of_PCPs}}</td>
-            <td class="my-grid-cell">{{mongoDatum.number_of_nurses}}</td>
-            <td class="my-grid-cell">{{mongoDatum.total_nurse_time}}</td>
-            <td class="my-grid-cell">{{mongoDatum.lost_cancelled}}</td>
-            <td class="my-grid-cell">{{mongoDatum.year}}</td>
-            <td class="my-grid-cell">{{mongoDatum.number_of_patients}}</td>
-            <td class="my-grid-cell">{{mongoDatum.total_patient_time}}</td>
-            <td class="my-grid-cell">{{mongoDatum.business_issue}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="my-grid-container-inner">
+        <div class="my-grid-container-inner-header" id="headerdiv">
+
+            <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid my-grid-container-inner-header-outer">
+                <thead class="my-grid-header-group">
+                <tr>
+                    <th class="my-grid-header my-column-id">ID</th>
+                    <th class="my-grid-header my-column-job_number">job_number</th>
+                    <th class="my-grid-header my-column-project-title">project_title</th>
+                    <th class="my-grid-header my-column-project-lead">project_lead</th>
+                    <th class="my-grid-header my-column-client">client</th>
+                    <th class="my-grid-header my-column-region">region</th>
+                    <th class="my-grid-header my-column-countries">countries</th>
+                    <th class="my-grid-header my-column-therapy">therapy</th>
+                    <th class="my-grid-header my-column-conditions">conditions</th>
+                    <th class="my-grid-header my-column-immunology">immunology</th>
+                    <th class="my-grid-header my-column-number-of-pcps">number_of_PCPs</th>
+                    <th class="my-grid-header my-column-number-of-nurses">number_of_nurses</th>
+                    <th class="my-grid-header my-column-total-nurse-time">total_nurse_time</th>
+                    <th class="my-grid-header my-column-lost-cancelled">lost_cancelled</th>
+                    <th class="my-grid-header my-column-year">year</th>
+                    <th class="my-grid-header my-column-number-of-patients">number_of_patients</th>
+                    <th class="my-grid-header my-column-total-patient-time">total_patient_time</th>
+                    <th class="my-grid-header my-column-business-issues">business_issue</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input st-search="id" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                    </th>
+                    <th>
+                        <input st-search="job_number" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                    </th>
+                    <th>
+                        <input st-search="project_title" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="my-grid-container-inner-body" onscroll="document.getElementById('headerdiv').scrollLeft = this.scrollLeft;">
+            <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid">
+                <tbody class="my-grid-body">
+                <tr ng-repeat="mongoDatum in displayedMongoData">
+                    <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
+                    <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
+                    <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
+                    <td class="my-grid-cell my-column-project-lead">{{mongoDatum.project_lead}}</td>
+                    <td class="my-grid-cell my-column-client">{{mongoDatum.client}}</td>
+                    <td class="my-grid-cell my-column-region">{{mongoDatum.region}}</td>
+                    <td class="my-grid-cell my-column-countries">{{mongoDatum.countries}}</td>
+                    <td class="my-grid-cell my-column-therapy">{{mongoDatum.therapy}}</td>
+                    <td class="my-grid-cell my-column-conditions"><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>
+                    <td class="my-grid-cell my-column-immunology">{{mongoDatum.immunology}}</td>
+                    <td class="my-grid-cell my-column-number-of-pcps">{{mongoDatum.number_of_PCPs}}</td>
+                    <td class="my-grid-cell my-column-number-of-nurses">{{mongoDatum.number_of_nurses}}</td>
+                    <td class="my-grid-cell my-column-total-nurse-time">{{mongoDatum.total_nurse_time}}</td>
+                    <td class="my-grid-cell my-column-lost-cancelled">{{mongoDatum.lost_cancelled}}</td>
+                    <td class="my-grid-cell my-column-year">{{mongoDatum.year}}</td>
+                    <td class="my-grid-cell my-column-number-of-patients">{{mongoDatum.number_of_patients}}</td>
+                    <td class="my-grid-cell my-column-total-patient-time">{{mongoDatum.total_patient_time}}</td>
+                    <td class="my-grid-cell my-column-business-issues">{{mongoDatum.business_issue}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <!--<div st-items-by-page="10" st-pagination="" st-template="grid/custom_pagination_nav.html">-->
         <!--<ng-include src="'grid/custom_pagination_nav.html'">-->
         <!--</ng-include>-->
@@ -76,7 +96,7 @@
 </div>
 <table style="margin: 0 auto">
     <tr>
-        <td colspan="5" class="text-center">
+        <td colspan="9" class="text-center">
             <div st-items-by-page="6" st-table="displayedMongoData" st-safe-src="mongoData" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
         </td>
     </tr>

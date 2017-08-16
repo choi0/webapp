@@ -94,25 +94,81 @@
 }
 
 .my-grid-container {
-
     width: 90%;
-    height: 400px;
-    margin: 0 auto;
-    overflow-x: scroll;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    /*overflow-x: scroll;*/
+    /*overflow-y: hidden;*/
+    /*padding-top: 30px;*/
+    /*overflow-y: scroll;*/
+    /*background-color: #ccc;*/
+    /*!*position: absolute;*!*/
+    /*!*top:0;*!*/
+    /*!*left: 0;*!*/
+    /*!*right: 300px;*!*/
+    /*!*bottom:80px;*!*/
+    /*overflow: visible;*/
+}
+.my-grid-container-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*!*overflow-y: scroll;*!*/
+}
+
+.my-grid-container-inner-header {
+    float:left;
+    width: 100%;
+    /*height: 0px;*/
+    height: 30%;
+    /*height: 80px;*/
+    overflow: hidden;
+    /*position: absolute;*/
+    cellpadding: 0px ;
+    cellspacing: 0px;
+    background-color: yellow;
+    margin-right: 40px;
+
+}
+.my-grid-container-inner-header-outer {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.my-grid-container-inner-body {
+    float:left;
+    height: 90%;
+    width: inherit;
     overflow-y: scroll;
-    border: #ff00da;
-    border-style: solid;
-    border-width: 3px;
+    /*padding-right: 16px;*/
 }
 
 .my-grid {
     /*padding: 0px;*/
-    width: 1900px !important;
-    height: 400px;
+    /*width: 1900px !important;*/
+    /*height: 400px;*/
+    width: 100%;
+    height: 100%;
     /*vertical-align: middle;*/
     /*overflow-x: scroll;*/
     margin: 0 auto;
     margin-bottom: 0 !important;
+    /*overflow-x: hidden;*/
+    /*overflow-y: scroll;*/
+    overflow: visible;
+    display: table;
+}
+
+.my-grid-body {
+    /*display: table-row-group;*/
+    /*!*display: flex;*!*/
+    /*vertical-align: middle;*/
+    /*border-color: inherit;*/
+    /*!*overflow-y: scroll !important;*!*/
 }
 
 .my-grid-row {
@@ -120,26 +176,131 @@
     /*overflow-x: scroll;*/
 }
 
-.my-grid-header {
+.my-grid-header-group {
+    /*height: 100%;*/
+    /*display: table-header-group;*/
+    /*!*display: flex;*!*/
+    /*vertical-align: middle;*/
+    /*!*display: flex;*!*/
+    /*!*flex-direction: column;*!*/
+    /*!*align-items: stretch;*!*/
+}
 
-    width: 400px !important;
-    border: #ff00da;
-    border-style: solid;
-    border-top: none;
-    border-bottom: none;
-    border-left-width: 1px;
-    border-right-width: 1px;
+.my-grid-header {
+    height: 100%;
+    background-color: yellow;
+    /*text-align: left;*/
+    /*height: 40px;*/
+    /*width: 400px !important;*/
+    /*border: #ff00da;*/
+    /*border-style: solid;*/
+    /*border-top: none;*/
+    /*border-bottom: none;*/
+    /*border-left-width: 1px;*/
+    /*border-right-width: 1px;*/
+    /*padding: inherit !important;*/
 }
 
 .my-grid-cell {
 
-    width: 400px !important;
+    /*width: 400px !important;*/
     border: #ff00da;
     border-style: solid;
-    border-top: none;
-    border-bottom: none;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    /*border-top: none;*/
+    /*border-bottom: none;*/
+    /*border-left-width: 1px;*/
+    /*border-right-width: 1px;*/
+}
+
+.my-column-id {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-job_number {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-project-title {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-project-lead {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-client {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-region {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-countries {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;
+}
+.my-column-therapy {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-conditions {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-immunology {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-number-of-pcps {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-number-of-nurses {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-total-nurse-time {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-lost-cancelled {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-year {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-number-of-patients {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-total-patient-time {
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
+}
+.my-column-business-issues{
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;    
 }
 
 .my-grid-modal .modal-dialog {
@@ -164,7 +325,7 @@
     margin-top: 20px;
     margin-bottom: 15px;
     padding: 20px;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     /*overflow-x: hidden;*/
     vertical-align: middle;
 }
