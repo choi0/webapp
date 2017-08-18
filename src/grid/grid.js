@@ -30,6 +30,7 @@ angular.module('angularbasic')
                             stringBuilder.push(data.conditions[j]);
                         // }
                     }
+                    data.showConditions = false;
                     // stringBuilder.join('  0   ');
                     // console.log(stringBuilder);
                     stringBuilder.innerHTML = stringBuilder.join("</br>");
@@ -76,6 +77,11 @@ angular.module('angularbasic')
                     })
             }
 
+            $scope.conditionsClicked = function(index) {
+                console.log(index + " project " + $scope.mongoData[index].project_title);
+                $scope.mongoData[index].showConditions = !$scope.mongoData[index].showConditions;
+
+            }
             // console.log(response);
             // console.log("end uuid service call");
             // $scope.gridOptions = {

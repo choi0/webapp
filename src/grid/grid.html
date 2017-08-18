@@ -25,7 +25,7 @@
     <div class="my-grid-container-inner">
         <div class="my-grid-container-inner-header" id="headerdiv">
 
-            <table class="table table-striped my-grid my-grid-container-inner-header-outer">
+            <table class="table my-grid my-grid-container-inner-header-outer">
                 <thead class="my-grid-header-group">
                 <tr>
                     <th class="my-grid-header my-column-id">ID</th>
@@ -65,7 +65,7 @@
         <div class="my-grid-container-inner-body" onscroll="document.getElementById('headerdiv').scrollLeft = this.scrollLeft;">
             <table class="table table-striped my-grid">
                 <tbody class="my-grid-body">
-                <tr ng-repeat="mongoDatum in displayed">
+                <tr ng-repeat="mongoDatum in displayed track by $index"  ng-click="mongoDatum.showConditions = !mongoDatum.showConditions">
                     <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
                     <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
                     <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
@@ -74,7 +74,11 @@
                     <td class="my-grid-cell my-column-region">{{mongoDatum.region}}</td>
                     <td class="my-grid-cell my-column-countries">{{mongoDatum.countries}}</td>
                     <td class="my-grid-cell my-column-therapy">{{mongoDatum.therapy}}</td>
-                    <td class="my-grid-cell my-column-conditions"><div ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div></td>
+                    <td class="my-grid-cell my-column-conditions">
+                        <span ng-if="!mongoDatum.showConditions">{{mongoDatum.conditions[0]}}</span>
+                        <span ng-if="!mongoDatum.showConditions && mongoDatum.conditions.length > 1"> ...</span>
+                        <div ng-if="mongoDatum.showConditions" ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div>
+                    </td>
                     <td class="my-grid-cell my-column-immunology">{{mongoDatum.immunology}}</td>
                     <td class="my-grid-cell my-column-number-of-pcps">{{mongoDatum.number_of_PCPs}}</td>
                     <td class="my-grid-cell my-column-number-of-nurses">{{mongoDatum.number_of_nurses}}</td>
@@ -97,7 +101,7 @@
     <table style="margin: 0 auto">
         <tr>
             <td colspan="9" class="text-center">
-                <div st-items-by-page="6" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
+                <div st-items-by-page="15" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
             </td>
         </tr>
     </table>
