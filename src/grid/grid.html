@@ -21,11 +21,11 @@
             </br>
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
-<div class="my-grid-container">
+<div class="my-grid-container" st-table="displayed" st-safe-src="mongoData" >
     <div class="my-grid-container-inner">
         <div class="my-grid-container-inner-header" id="headerdiv">
 
-            <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid my-grid-container-inner-header-outer">
+            <table class="table table-striped my-grid my-grid-container-inner-header-outer">
                 <thead class="my-grid-header-group">
                 <tr>
                     <th class="my-grid-header my-column-id">ID</th>
@@ -62,9 +62,9 @@
             </table>
         </div>
         <div class="my-grid-container-inner-body" onscroll="document.getElementById('headerdiv').scrollLeft = this.scrollLeft;">
-            <table st-table="displayedMongoData" st-safe-src="mongoData" class="table table-striped my-grid">
+            <table class="table table-striped my-grid">
                 <tbody class="my-grid-body">
-                <tr ng-repeat="mongoDatum in displayedMongoData">
+                <tr ng-repeat="mongoDatum in displayed">
                     <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
                     <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
                     <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
@@ -93,14 +93,14 @@
         <!--</ng-include>-->
     <!--</div>-->
     <!--<div ng-controller="FooterCtrl">-->
+    <table style="margin: 0 auto">
+        <tr>
+            <td colspan="9" class="text-center">
+                <div st-items-by-page="6" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
+            </td>
+        </tr>
+    </table>
 </div>
-<table style="margin: 0 auto">
-    <tr>
-        <td colspan="9" class="text-center">
-            <div st-items-by-page="6" st-table="displayedMongoData" st-safe-src="mongoData" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
-        </td>
-    </tr>
-</table>
 
 
 
