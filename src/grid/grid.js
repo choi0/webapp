@@ -41,6 +41,7 @@ angular.module('angularbasic')
                     // console.dir(data);
                     // data.conditions = data.conditions.split(',').join("<br />")
                     // console.dir(data);
+                    // data._id = undefined;
                     $scope.mongoData.push(data);
                     $scope.displayedMongoData = [].concat($scope.mongoData);
                     // $scope.mongoData.push(res.data[i]);
@@ -172,7 +173,56 @@ angular.module('angularbasic')
             };
             
             // $scope.gridOptions.data = 'mongoData';
-
-
             console.log("CLIENT IS ON: " + __env.clientEnv);
-}]);
+
+            $scope.downloadCSV = function () {
+                console.log( $scope.filteredCollection)
+                console.log( $scope.filteredCollection[0])
+                var csv = [];
+
+                //push headers
+                // if($scope.filteredCollection[0]) {
+                //     var objKeys = [];
+                //     var currObjKey;
+                //     for (currObjKey in $scope.filteredCollection[0]) {
+                //         if ($scope.filteredCollection[0].hasOwnProperty(currObjKey)) {
+                //             // if (currObjKey != "_id" && currObjKey != "showConditions") {
+                //                 objKeys.push(currObjKey);
+                //             // }
+                //         }
+                //     }
+                //     csv.push(objKeys);
+                // }
+                var headers = {id: "id", Job_Number: "Job Number", Project_Title: "Project Title", Project_Lead: "Project Lead", Client: "Client", Region: "Region", Countries: "Countries", Therapy: "Therapy", Conditions: "Conditions", Immunology: "Immunology", Number_Of_PCPs: "Number Of PCPs", Number_Of_Nurses: "Number Of Nurses", Total_Nurse_Time: "Total Nurse Time", Lost_Cancelled: "Lost/Cancelled", Year: "Year", Number_Of_Patients: "Number Of Patients", Total_Patient_Time: "Total Patient Time", Business_Issue: "Business Issue"};
+                console.log(headers)
+                csv.push(headers);
+                //push data
+                for (var i = 0; i < $scope.filteredCollection.length; i++) {
+                    row = $scope.filteredCollection[i];
+                    console.log("row: "+row);
+                    delete row._id;
+                    delete row.showConditions;
+                    row.conditions = row.conditions.join(", ");
+                    csv.push(row);
+                }
+                return csv;
+            }
+
+}]).directive('stFilteredCollection', function () {
+    return {
+        restrict: 'A',
+        require: '^stTable',
+        scope: {
+            stFilteredCollection: '='
+        },
+        controller: 'stTableController',
+        link: function (scope, element, attr, ctrl) {
+
+            scope.$watch(function () {
+                return ctrl.getFilteredCollection();
+            }, function (newValue, oldValue) {
+                scope.stFilteredCollection = ctrl.getFilteredCollection();
+            });
+        }
+    };
+});

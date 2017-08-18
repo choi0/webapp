@@ -21,7 +21,8 @@
             </br>
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
-<div class="my-grid-container" st-table="displayed" st-safe-src="mongoData" >
+<button type="button" ng-csv="downloadCSV()" filename="test.csv">Export</button>
+<div class="my-grid-container" st-table="displayed" st-safe-src="mongoData" st-filtered-collection="filteredCollection">
     <div class="my-grid-container-inner">
         <div class="my-grid-container-inner-header" id="headerdiv">
 
@@ -101,7 +102,7 @@
     <table style="margin: 0 auto">
         <tr>
             <td colspan="9" class="text-center">
-                <div st-items-by-page="15" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
+                <div st-items-by-page="10" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
             </td>
         </tr>
     </table>
