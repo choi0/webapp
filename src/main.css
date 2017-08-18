@@ -95,8 +95,9 @@
 
 .my-grid-container {
     width: 90%;
-    height: 300px;
-    border: 1px solid black;
+    min-height: 500px;
+    height: 500px;
+    max-height: 600px;
     margin: 0px auto;
     background-color: white;
     position: relative;
@@ -114,8 +115,10 @@
 }
 .my-grid-container-inner {
     width: 100%;
-    height: 100%;
-    position: relative;
+    height: auto;
+    /*position: relative;*/
+    border: 1px solid black;
+    display: inline-block;
     /*!*overflow-y: scroll;*!*/
 }
 
@@ -123,14 +126,13 @@
     float:left;
     width: 100%;
     /*height: 0px;*/
-    height: 30%;
+    height: auto;
     /*height: 80px;*/
     overflow: hidden;
     /*position: absolute;*/
     cellpadding: 0px ;
     cellspacing: 0px;
     background-color: yellow;
-    margin-right: 40px;
 
 }
 .my-grid-container-inner-header-outer {
@@ -141,7 +143,7 @@
 
 .my-grid-container-inner-body {
     float:left;
-    height: 90%;
+    height: auto;
     width: inherit;
     overflow-y: scroll;
     /*padding-right: 16px;*/
@@ -325,7 +327,7 @@
     margin-top: 20px;
     margin-bottom: 15px;
     padding: 20px;
-    /*overflow-y: auto;*/
+    overflow-y: scroll;
     /*overflow-x: hidden;*/
     vertical-align: middle;
 }
