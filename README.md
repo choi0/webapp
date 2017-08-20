@@ -10,6 +10,7 @@ project input modal
 fixed header
 moveable columns
 search on columns/search on all
+dynamic page sizing, row count/pagination
 click to expand (change cell template)
 expand all/collapse all button
 styling

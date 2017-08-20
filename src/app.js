@@ -8,8 +8,7 @@ var app = angular.module('angularbasic',
         'ngSanitize',
         'ngTouch',
         'ui.bootstrap',
-        'smart-table',
-        'ngCsv'
+        'smart-table'
     ]);
 
 

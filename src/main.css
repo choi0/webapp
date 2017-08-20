@@ -94,10 +94,10 @@
 }
 
 .my-grid-container {
-    width: 90%;
+    width: 100%;
     min-height: 500px;
-    height: 500px;
-    max-height: 600px;
+    height: 100%;
+    /*max-height: 600px;*/
     margin: 0px auto;
     background-color: white;
     position: relative;
