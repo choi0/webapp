@@ -52,18 +52,18 @@
     <!--<script src="/node_modules/angular-ui-grid/ui-grid.css"></script>-->
 
 </head>
-<body>
-<div ng-controller="HeaderCtrl" >
+<body class="my-body">
+<div ng-controller="HeaderCtrl" class="my-index-header">
     <ng-include src="'partials/header/header.html'">
     </ng-include>
 </div>
-<div>
+<div class="my-index-body">
     <ng-view></ng-view>
 </div>
-<div ng-controller="FooterCtrl">
-    <ng-include src="'partials/footer/footer.html'">
-    </ng-include>
-</div>
+<!--<div ng-controller="FooterCtrl">-->
+    <!--<ng-include src="'partials/footer/footer.html'">-->
+    <!--</ng-include>-->
+<!--</div>-->
 </body>
 
 

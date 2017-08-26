@@ -18,14 +18,13 @@
         <!--<br class="col-md-12">-->
             <!--there was a table here-->
         <!--</br>-->
-            </br>
+            <!--</br>-->
 <!--HEREHRHEHRE-->
             <!--<div id="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="my-grid"></div>-->
-<button type="button" ng-csv="downloadCSV()" filename="test.csv">Export</button>
+<!--<button type="button" ng-csv="downloadCSV()" filename="test.csv">Export</button>-->
 <div class="my-grid-container" st-table="displayed" st-safe-src="mongoData" st-filtered-collection="filteredCollection">
     <div class="my-grid-container-inner">
         <div class="my-grid-container-inner-header" id="headerdiv">
-
             <table class="table my-grid my-grid-container-inner-header-outer">
                 <thead class="my-grid-header-group">
                 <tr>
@@ -72,35 +71,38 @@
                 </thead>
             </table>
         </div>
-        <div class="my-grid-container-inner-body" onscroll="document.getElementById('headerdiv').scrollLeft = this.scrollLeft;">
-            <table class="table table-striped my-grid">
-                <tbody class="my-grid-body">
-                <tr ng-repeat="mongoDatum in displayed track by $index"  ng-click="mongoDatum.showConditions = !mongoDatum.showConditions">
-                    <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
-                    <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
-                    <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
-                    <td class="my-grid-cell my-column-project-lead">{{mongoDatum.project_lead}}</td>
-                    <td class="my-grid-cell my-column-client">{{mongoDatum.client}}</td>
-                    <td class="my-grid-cell my-column-region">{{mongoDatum.region}}</td>
-                    <td class="my-grid-cell my-column-countries">{{mongoDatum.countries}}</td>
-                    <td class="my-grid-cell my-column-therapy">{{mongoDatum.therapy}}</td>
-                    <td class="my-grid-cell my-column-conditions">
-                        <span ng-if="!mongoDatum.showConditions">{{mongoDatum.conditions[0]}}</span>
-                        <span ng-if="!mongoDatum.showConditions && mongoDatum.conditions.length > 1"> ...</span>
-                        <div ng-if="mongoDatum.showConditions" ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div>
-                    </td>
-                    <td class="my-grid-cell my-column-immunology">{{mongoDatum.immunology}}</td>
-                    <td class="my-grid-cell my-column-number-of-pcps">{{mongoDatum.number_of_PCPs}}</td>
-                    <td class="my-grid-cell my-column-number-of-nurses">{{mongoDatum.number_of_nurses}}</td>
-                    <td class="my-grid-cell my-column-total-nurse-time">{{mongoDatum.total_nurse_time}}</td>
-                    <td class="my-grid-cell my-column-lost-cancelled">{{mongoDatum.lost_cancelled}}</td>
-                    <td class="my-grid-cell my-column-year">{{mongoDatum.year}}</td>
-                    <td class="my-grid-cell my-column-number-of-patients">{{mongoDatum.number_of_patients}}</td>
-                    <td class="my-grid-cell my-column-total-patient-time">{{mongoDatum.total_patient_time}}</td>
-                    <td class="my-grid-cell my-column-business-issues">{{mongoDatum.business_issue}}</td>
-                </tr>
-                </tbody>
-            </table>
+        <!--<div class="my-grid-container-inner-body-outer">-->
+            <div class="my-grid-container-inner-body" onscroll="document.getElementById('headerdiv').scrollLeft = this.scrollLeft;">
+                <table class="table table-striped my-grid">
+                    <tbody class="my-grid-body">
+                    <tr ng-repeat="mongoDatum in displayed track by $index"  ng-click="mongoDatum.showConditions = !mongoDatum.showConditions">
+                        <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
+                        <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
+                        <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
+                        <td class="my-grid-cell my-column-project-lead">{{mongoDatum.project_lead}}</td>
+                        <td class="my-grid-cell my-column-client">{{mongoDatum.client}}</td>
+                        <td class="my-grid-cell my-column-region">{{mongoDatum.region}}</td>
+                        <td class="my-grid-cell my-column-countries">{{mongoDatum.countries}}</td>
+                        <td class="my-grid-cell my-column-therapy">{{mongoDatum.therapy}}</td>
+                        <td class="my-grid-cell my-column-conditions">
+                            <span ng-if="!mongoDatum.showConditions">{{mongoDatum.conditions[0]}}</span>
+                            <span ng-if="!mongoDatum.showConditions && mongoDatum.conditions.length > 1"> ...</span>
+                            <div ng-if="mongoDatum.showConditions" ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div>
+                        </td>
+                        <td class="my-grid-cell my-column-immunology">{{mongoDatum.immunology}}</td>
+                        <td class="my-grid-cell my-column-number-of-pcps">{{mongoDatum.number_of_PCPs}}</td>
+                        <td class="my-grid-cell my-column-number-of-nurses">{{mongoDatum.number_of_nurses}}</td>
+                        <td class="my-grid-cell my-column-total-nurse-time">{{mongoDatum.total_nurse_time}}</td>
+                        <td class="my-grid-cell my-column-lost-cancelled">{{mongoDatum.lost_cancelled}}</td>
+                        <td class="my-grid-cell my-column-year">{{mongoDatum.year}}</td>
+                        <td class="my-grid-cell my-column-number-of-patients">{{mongoDatum.number_of_patients}}</td>
+                        <td class="my-grid-cell my-column-total-patient-time">{{mongoDatum.total_patient_time}}</td>
+                        <td class="my-grid-cell my-column-business-issues">{{mongoDatum.business_issue}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        <!--</div>-->
         </div>
     </div>
     <!--<div st-items-by-page="10" st-pagination="" st-template="grid/custom_pagination_nav.html">-->
@@ -108,13 +110,13 @@
         <!--</ng-include>-->
     <!--</div>-->
     <!--<div ng-controller="FooterCtrl">-->
-    <table style="margin: 0 auto">
-        <tr>
-            <td colspan="9" class="text-center">
-                <div st-items-by-page="10" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>
-            </td>
-        </tr>
-    </table>
+    <!--<table style="margin: 0 auto">-->
+        <!--<tr>-->
+            <!--<td colspan="9" class="text-center">-->
+                <!--<div st-items-by-page="10" st-pagination="" st-template="/grid/custom_pagination_nav.html"></div>-->
+            <!--</td>-->
+        <!--</tr>-->
+    <!--</table>-->
 </div>
 
 

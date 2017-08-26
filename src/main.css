@@ -1,3 +1,9 @@
+.my-index-header {
+    height: 40px;
+}
+.my-index-body {
+    height: calc(100vh - 40px);
+}
 .add-conditions {
     /*background: ;*/
     /*margin: 0 auto !important;*/
@@ -9,6 +15,10 @@
 
 }
 
+.my-body {
+    min-height: 100vh;
+    height: 100vh;
+}
 .remove-conditions {
     /*margin: 0 auto !important;*/
     height: 20px;
@@ -39,9 +49,11 @@
 
 }
 .grid-modal-button  {
-    padding: 0px;
+    padding: 10px;
     width: 90%;
-    height: 40%;
+    /*height: 10%;*/
+    height: auto;
+    height: 54.4px;
     vertical-align: middle;
     margin: 0 auto;
     text-align: right;
@@ -95,9 +107,12 @@
 
 .my-grid-container {
     width: 100%;
-    min-height: 500px;
-    height: 100%;
+    /*min-height: 500px;*/
+    /*height: 500px;*/
     /*max-height: 600px;*/
+    /*height: 90%;*/
+    height: 80%;
+    height: calc(100% - 55.7px);
     margin: 0px auto;
     background-color: white;
     position: relative;
@@ -115,7 +130,7 @@
 }
 .my-grid-container-inner {
     width: 100%;
-    height: auto;
+    height: 100%;
     /*position: relative;*/
     border: 1px solid black;
     display: inline-block;
@@ -127,7 +142,8 @@
     width: 100%;
     /*height: 0px;*/
     height: auto;
-    /*height: 80px;*/
+    /*height: 10%;*/
+    height: 85.6px;
     overflow: hidden;
     /*position: absolute;*/
     cellpadding: 0px ;
@@ -142,14 +158,21 @@
 }
 
 .my-grid-container-inner-body {
-    float:left;
-    height: auto;
+    /*float:left;*/
+    /*height: 400px;*/
+    /*height: auto;*/
+    /*height: 90%;*/
+    height: calc(100% - (85.6px));
     width: inherit;
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
     overflow-x: scroll;
+    margin: 0 auto;
     /*padding-right: 16px;*/
 }
 
+.my-grid-container-inner-body-outer {
+    height: 100%;
+}
 .my-grid {
     /*padding: 0px;*/
     /*width: 1900px !important;*/
@@ -171,7 +194,7 @@
     /*!*display: flex;*!*/
     /*vertical-align: middle;*/
     /*border-color: inherit;*/
-    /*!*overflow-y: scroll !important;*!*/
+    /*overflow-y: scroll !important;*/
 }
 
 .my-grid-row {
