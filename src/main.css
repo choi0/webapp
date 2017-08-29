@@ -3,6 +3,8 @@
 }
 .my-index-body {
     height: calc(100vh - 40px);
+    /*bottom:0;*/
+    position: relative;
 }
 .add-conditions {
     /*background: ;*/
@@ -111,7 +113,7 @@
     /*height: 500px;*/
     /*max-height: 600px;*/
     /*height: 90%;*/
-    height: 80%;
+    /*height: 80%;*/
     height: calc(100% - 55.7px);
     margin: 0px auto;
     background-color: white;
@@ -134,6 +136,8 @@
     /*position: relative;*/
     border: 1px solid black;
     display: inline-block;
+    position: absolute;
+    bottom:0;
     /*!*overflow-y: scroll;*!*/
 }
 
