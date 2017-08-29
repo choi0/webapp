@@ -28,45 +28,50 @@
             <table class="table my-grid my-grid-container-inner-header-outer">
                 <thead class="my-grid-header-group">
                 <tr>
-                    <th class="my-grid-header my-column-id">ID</th>
-                    <th class="my-grid-header my-column-job_number">job_number</th>
-                    <th class="my-grid-header my-column-project-title">project_title</th>
-                    <th class="my-grid-header my-column-project-lead">project_lead</th>
-                    <th class="my-grid-header my-column-client">client</th>
-                    <th class="my-grid-header my-column-region">region</th>
-                    <th class="my-grid-header my-column-countries">countries</th>
-                    <th class="my-grid-header my-column-therapy">therapy</th>
-                    <th class="my-grid-header my-column-conditions">conditions</th>
-                    <th class="my-grid-header my-column-immunology">immunology</th>
-                    <th class="my-grid-header my-column-number-of-pcps">number_of_PCPs</th>
-                    <th class="my-grid-header my-column-number-of-nurses">number_of_nurses</th>
-                    <th class="my-grid-header my-column-total-nurse-time">total_nurse_time</th>
-                    <th class="my-grid-header my-column-lost-cancelled">lost_cancelled</th>
-                    <th class="my-grid-header my-column-year">year</th>
-                    <th class="my-grid-header my-column-number-of-patients">number_of_patients</th>
-                    <th class="my-grid-header my-column-total-patient-time">total_patient_time</th>
-                    <th class="my-grid-header my-column-business-issues">business_issue</th>
-                    <th class="my-grid-header my-column-business-issues">  </th>
+                    <th class="my-grid-header my-column-job-number">Job Number</th>
+                    <th class="my-grid-header my-column-client">Client</th>
+                    <th class="my-grid-header my-column-lifecycle-stage">Life Cycle Stage</th>
+                    <th class="my-grid-header my-column-business-issue">Business Issue</th>
+                    <th class="my-grid-header my-column-therapy-area">Therapy Area</th>
+                    <th class="my-grid-header my-column-project-title">Project Title</th>
+                    <th class="my-grid-header my-column-brand">Brand</th>
+                    <th class="my-grid-header my-column-generic-name-formulation">Generic Name/Formulation</th>
+                    <th class="my-grid-header my-column-drug-class-product">Drug Class/Product</th>
+                    <th class="my-grid-header my-column-situation-problem">Situation Problem</th>
+                    <th class="my-grid-header my-column-conditions">Conditions</th>
+                    <th class="my-grid-header my-column-office">Office</th>
+                    <th class="my-grid-header my-column-type">Type</th>
+                    <th class="my-grid-header my-column-technique">Technique</th>
+                    <th class="my-grid-header my-column-customer-target">Customer Target</th>
+                    <th class="my-grid-header my-column-brand-type">Brand Type</th>
+                    <th class="my-grid-header my-column-bsc-personnel">BSc Personnel</th>
+                    <th class="my-grid-header my-column-key-client-personnel">Key Client Personnel</th>
+                    <th class="my-grid-header my-column-sample-size">Sample Size</th>
+                    <th class="my-grid-header my-column-total-time">Total Time</th>
+                    <th class="my-grid-header my-column-placeholder"></th>
                 </tr>
                 <tr>
-                    <th><input st-search="id" placeholder="" class="input-sm form-control" type="search"></th>
                     <th><input st-search="job_number" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="project_title" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="project_lead" placeholder="" class="input-sm form-control" type="search"></th>
                     <th><input st-search="client" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="region" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="countries" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="therapy" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="conditions" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="immunology" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="number_of_PCPs" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="number_of_nurses" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="total_nurse_time" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="lost_cancelled" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="year" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="number_of_patients" placeholder="" class="input-sm form-control" type="search"></th>
-                    <th><input st-search="total_patient_time" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="life_cycle_stage" placeholder="" class="input-sm form-control" type="search"></th>
                     <th><input st-search="business_issue" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="therapy_area" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="project_title" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="brand" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="generic_name_formulation" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="drug_class_product" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="situation_problem" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="conditions" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="office" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="type" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="technique" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="customer_target" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="brand_type" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="bsc_personnel" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="key_client_personnel" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="sample_size" placeholder="" class="input-sm form-control" type="search"></th>
+                    <th><input st-search="total_time" placeholder="" class="input-sm form-control" type="search"></th>
+
                 </tr>
                 </thead>
             </table>
@@ -76,28 +81,31 @@
                 <table class="table table-striped my-grid">
                     <tbody class="my-grid-body">
                     <tr ng-repeat="mongoDatum in displayed track by $index"  ng-click="mongoDatum.showConditions = !mongoDatum.showConditions">
-                        <td class="my-grid-cell my-column-id">{{mongoDatum.id}}</td>
-                        <td class="my-grid-cell my-column-job_number">{{mongoDatum.job_number}}</td>
-                        <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
-                        <td class="my-grid-cell my-column-project-lead">{{mongoDatum.project_lead}}</td>
+
+                        <td class="my-grid-cell my-column-job-number">{{mongoDatum.job_number}}</td>
                         <td class="my-grid-cell my-column-client">{{mongoDatum.client}}</td>
-                        <td class="my-grid-cell my-column-region">{{mongoDatum.region}}</td>
-                        <td class="my-grid-cell my-column-countries">{{mongoDatum.countries}}</td>
-                        <td class="my-grid-cell my-column-therapy">{{mongoDatum.therapy}}</td>
+                        <td class="my-grid-cell my-column-lifecycle-stage">{{mongoDatum.life_cycle_stage}}</td>
+                        <td class="my-grid-cell my-column-business-issue">{{mongoDatum.business_issue}}</td>
+                        <td class="my-grid-cell my-column-therapy-area">{{mongoDatum.therapy_area}}</td>
+                        <td class="my-grid-cell my-column-project-title">{{mongoDatum.project_title}}</td>
+                        <td class="my-grid-cell my-column-brand">{{mongoDatum.brand}}</td>
+                        <td class="my-grid-cell my-column-generic-name-formulation">{{mongoDatum.generic_name_formulation}}</td>
+                        <td class="my-grid-cell my-column-drug-class-product">{{mongoDatum.drug_class_product}}</td>
+                        <td class="my-grid-cell my-column-situation-problem">{{mongoDatum.situation_problem}}</td>
                         <td class="my-grid-cell my-column-conditions">
                             <span ng-if="!mongoDatum.showConditions">{{mongoDatum.conditions[0]}}</span>
                             <span ng-if="!mongoDatum.showConditions && mongoDatum.conditions.length > 1"> ...</span>
                             <div ng-if="mongoDatum.showConditions" ng-repeat="item in mongoDatum.conditions track by $index">{{item}}</div>
                         </td>
-                        <td class="my-grid-cell my-column-immunology">{{mongoDatum.immunology}}</td>
-                        <td class="my-grid-cell my-column-number-of-pcps">{{mongoDatum.number_of_PCPs}}</td>
-                        <td class="my-grid-cell my-column-number-of-nurses">{{mongoDatum.number_of_nurses}}</td>
-                        <td class="my-grid-cell my-column-total-nurse-time">{{mongoDatum.total_nurse_time}}</td>
-                        <td class="my-grid-cell my-column-lost-cancelled">{{mongoDatum.lost_cancelled}}</td>
-                        <td class="my-grid-cell my-column-year">{{mongoDatum.year}}</td>
-                        <td class="my-grid-cell my-column-number-of-patients">{{mongoDatum.number_of_patients}}</td>
-                        <td class="my-grid-cell my-column-total-patient-time">{{mongoDatum.total_patient_time}}</td>
-                        <td class="my-grid-cell my-column-business-issues">{{mongoDatum.business_issue}}</td>
+                        <td class="my-grid-cell my-column-office">{{mongoDatum.office}}</td>
+                        <td class="my-grid-cell my-column-type">{{mongoDatum.type}}</td>
+                        <td class="my-grid-cell my-column-technique">{{mongoDatum.technique}}</td>
+                        <td class="my-grid-cell my-column-customer-target">{{mongoDatum.customer_target}}</td>
+                        <td class="my-grid-cell my-column-brand-type">{{mongoDatum.brand_type}}</td>
+                        <td class="my-grid-cell my-column-bsc-personnel">{{mongoDatum.bsc_personnel}}</td>
+                        <td class="my-grid-cell my-column-key-client-personnel">{{mongoDatum.key_client_personnel}}</td>
+                        <td class="my-grid-cell my-column-sample-size">{{mongoDatum.sample_size}}</td>
+                        <td class="my-grid-cell my-column-total-time">{{mongoDatum.total_time}}</td>
                     </tr>
                     </tbody>
                 </table>
